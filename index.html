@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>QuickTake Health — Platform Progression</title>
+  <meta name="description" content="A client-ready view of QuickTake Health’s stable clinical core, controlled expansion, and path toward a connected operating platform.">
+  <meta property="og:title" content="QuickTake Health — Platform Progression">
+  <meta property="og:description" content="Stable core. Controlled expansion. Compounding value.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://salmanasif-pm.github.io/quicktake-platform-progression/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root{
+      --night:#061625;--navy:#0a2035;--navy2:#0e2c47;--panel:#0c263e;--panel2:#102f4c;
+      --white:#f7fbff;--soft:#c7d8e5;--muted:#86a3b8;--line:rgba(190,222,240,.15);
+      --cyan:#49c9f2;--blue:#6796ff;--mint:#5fe3c4;--amber:#f3b75b;--coral:#ff7d7d;
+      --shadow:0 28px 80px rgba(0,0,0,.28);
+    }
+    *{box-sizing:border-box}
+    html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#020b12;color:var(--white);
+      font-family:"Avenir Next","Inter","Segoe UI",system-ui,-apple-system,sans-serif}
+    button{font:inherit}
+    .deck{width:100%;height:100%;display:grid;place-items:center}
+    .slide{display:none;position:relative;width:min(100vw,177.777vh);height:min(100vh,56.25vw);
+      padding:5.35% 6.25% 4.7%;overflow:hidden;box-shadow:var(--shadow);
+      background:
+        radial-gradient(circle at 88% 9%,rgba(73,201,242,.16),transparent 29%),
+        radial-gradient(circle at 12% 102%,rgba(103,150,255,.13),transparent 34%),
+        linear-gradient(135deg,var(--night),var(--navy) 52%,#081c30)}
+    .slide.active{display:block;animation:slide-arrive .58s cubic-bezier(.22,.8,.24,1) both}
+    .slide.active .content>*{animation:content-rise .54s cubic-bezier(.22,.8,.24,1) both}
+    .slide.active .content>*:nth-child(2){animation-delay:.07s}
+    .slide.active .content>*:nth-child(3){animation-delay:.13s}
+    .slide.active .content>*:nth-child(4){animation-delay:.19s}
+    .slide::before{content:"";position:absolute;inset:0;opacity:.16;pointer-events:none;
+      background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 72%)}
+    .slide::after{content:"";position:absolute;right:-13%;bottom:-37%;width:43%;height:72%;
+      border:1px solid rgba(73,201,242,.16);border-radius:50%;box-shadow:0 0 0 52px rgba(73,201,242,.025),
+      0 0 0 104px rgba(103,150,255,.018);pointer-events:none}
+    .content{position:relative;z-index:2;height:100%}
+    .eyebrow{display:flex;align-items:center;gap:.7rem;font-size:clamp(10px,.82vw,13px);
+      letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--cyan);margin-bottom:1rem}
+    .eyebrow::before{content:"";width:30px;height:2px;background:linear-gradient(90deg,var(--cyan),var(--blue))}
+    h1,h2,h3,p{margin:0}
+    h1,h2,h3{font-family:"Avenir Next","Inter","Segoe UI",sans-serif;color:var(--white)}
+    h1{font-size:clamp(42px,5vw,76px);line-height:.98;letter-spacing:-.047em;font-weight:750;max-width:76%}
+    h2{font-size:clamp(31px,3.6vw,56px);line-height:1.02;letter-spacing:-.038em;font-weight:720;max-width:88%}
+    h3{font-size:clamp(16px,1.45vw,23px);line-height:1.16;font-weight:690}
+    .gradient-text{background:linear-gradient(100deg,var(--white) 5%,#d9f6ff 45%,var(--cyan));
+      -webkit-background-clip:text;background-clip:text;color:transparent}
+    .lede{font-size:clamp(15px,1.35vw,21px);line-height:1.5;color:var(--soft);max-width:71%;margin-top:1.35rem}
+    .hero-lede{max-width:58%}
+    .footer{position:absolute;z-index:4;left:6.25%;right:6.25%;bottom:2.4%;display:flex;align-items:center;
+      justify-content:space-between;gap:1rem;color:var(--muted);font-size:clamp(9px,.7vw,11px);letter-spacing:.055em}
+    .footer strong{color:#dcebf5;white-space:nowrap}.footer span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .chip{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--line);border-radius:999px;
+      padding:.45rem .7rem;color:var(--soft);background:rgba(255,255,255,.035);font-size:clamp(9px,.72vw,11px);font-weight:700}
+    .chip i{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+    .hero-orbit{position:absolute;right:4.5%;top:8%;width:36%;aspect-ratio:1;border:1px solid rgba(73,201,242,.18);
+      border-radius:50%;display:grid;place-items:center}
+    .hero-orbit::before,.hero-orbit::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(103,150,255,.17)}
+    .hero-orbit::before{inset:13%}.hero-orbit::after{inset:28%}
+    .hero-core{position:relative;z-index:2;width:34%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
+      text-align:center;background:radial-gradient(circle at 35% 30%,#1c5274,#0b2b47 65%);
+      border:1px solid rgba(153,225,255,.34);box-shadow:0 0 60px rgba(73,201,242,.22)}
+    .hero-core strong{font-size:clamp(14px,1.15vw,18px);line-height:1.15}.hero-core small{display:block;color:var(--cyan);font-weight:800;margin-top:.25rem}
+    .node{position:absolute;width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px var(--cyan)}
+    .node.n1{top:8%;left:48%}.node.n2{right:10%;top:42%;background:var(--mint);box-shadow:0 0 18px var(--mint)}
+    .node.n3{left:13%;bottom:21%;background:var(--blue);box-shadow:0 0 18px var(--blue)}
+    .hero-proof{position:absolute;right:2%;bottom:8%;width:39%;display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
+    .proof{padding:.8rem .85rem;border:1px solid var(--line);background:rgba(5,22,38,.76);backdrop-filter:blur(8px);border-radius:14px}
+    .proof strong{display:block;font-size:clamp(13px,1.02vw,16px);color:var(--white)}.proof span{font-size:clamp(9px,.68vw,11px);color:var(--muted)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.5rem}
+    .challenge{padding:1.2rem 1.25rem;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018))}
+    .challenge h3{margin-bottom:.8rem}.challenge ul{margin:0;padding-left:1.15rem}.challenge li{color:var(--soft);font-size:clamp(11px,.88vw,14px);line-height:1.44;margin:.45rem 0}
+    .challenge.take{border-top:3px solid var(--coral)}.challenge.solve{border-top:3px solid var(--mint)}
+    .challenge .label{font-size:clamp(9px,.68vw,11px);letter-spacing:.13em;text-transform:uppercase;font-weight:800;margin-bottom:.55rem}
+    .take .label{color:var(--coral)}.solve .label{color:var(--mint)}
+    .insight-bar{display:grid;grid-template-columns:1.45fr .55fr;gap:1rem;margin-top:1rem}
+    .insight-copy{padding:1rem 1.15rem;border-left:3px solid var(--cyan);background:rgba(73,201,242,.075);border-radius:0 14px 14px 0;
+      color:var(--soft);font-size:clamp(12px,.95vw,15px);line-height:1.44}
+    .insight-stat{padding:1rem;border:1px solid var(--line);border-radius:14px;text-align:center;background:rgba(255,255,255,.035)}
+    .insight-stat strong{display:block;font-size:clamp(22px,2.1vw,33px);color:var(--cyan);line-height:1}.insight-stat span{font-size:clamp(9px,.72vw,11px);color:var(--muted)}
+    .grid{display:grid;gap:.85rem;margin-top:1.5rem}.grid.four{grid-template-columns:repeat(4,1fr)}.grid.three{grid-template-columns:repeat(3,1fr)}
+    .card{position:relative;min-height:150px;padding:1.05rem 1.05rem 1rem;border:1px solid var(--line);border-radius:16px;
+      background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.024));overflow:hidden}
+    .card::after{content:"";position:absolute;inset:auto -18% -45% 42%;height:80%;border-radius:50%;background:radial-gradient(circle,rgba(73,201,242,.12),transparent 65%)}
+    .card .state{display:flex;align-items:center;gap:.45rem;font-size:clamp(8px,.63vw,10px);letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--cyan);margin-bottom:.75rem}
+    .card .state::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor}
+    .card h3{margin-bottom:.55rem;position:relative;z-index:1}.card p{color:var(--muted);font-size:clamp(10px,.8vw,13px);line-height:1.45;position:relative;z-index:1}
+    .card.blue .state{color:var(--blue)}.card.mint .state{color:var(--mint)}.card.amber .state{color:var(--amber)}.card.gray .state{color:#9eb0bd}
+    .rail{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin-top:2rem;position:relative}
+    .rail::before{content:"";position:absolute;top:17px;left:5%;right:5%;height:2px;background:linear-gradient(90deg,var(--mint),var(--cyan),var(--amber),#648096)}
+    .stage{position:relative;padding:3.05rem .3rem 0}.stage::before{content:"";position:absolute;top:7px;left:.3rem;width:21px;height:21px;border-radius:50%;
+      background:var(--night);border:5px solid var(--mint);box-shadow:0 0 0 5px rgba(95,227,196,.07),0 0 22px rgba(95,227,196,.3)}
+    .stage:nth-child(2)::before{border-color:var(--cyan)}.stage:nth-child(3)::before{border-color:var(--amber)}.stage:nth-child(4)::before{border-color:#7f98a9}
+    .stage small{color:var(--muted);font-size:clamp(8px,.62vw,10px);letter-spacing:.13em;text-transform:uppercase;font-weight:800}
+    .stage h3{margin:.4rem 0}.stage p{font-size:clamp(10px,.78vw,12.5px);line-height:1.43;color:var(--muted)}
+    .worksplit{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem}
+    .workpanel{padding:1.05rem 1.15rem;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.035)}
+    .workpanel.now{border-top:3px solid var(--mint)}.workpanel.gated{border-top:3px solid var(--amber)}
+    .workpanel h3{margin-bottom:.6rem}.workpanel ul{margin:0;padding-left:1.15rem}.workpanel li{font-size:clamp(10px,.79vw,12.7px);color:var(--soft);line-height:1.4;margin:.38rem 0}
+    .leverage{margin-top:.9rem;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:.7rem}
+    .lever{padding:.7rem .8rem;text-align:center;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.035);
+      font-weight:700;color:var(--soft);font-size:clamp(10px,.8vw,13px)}.operator{color:var(--cyan);font-weight:900;font-size:clamp(18px,1.6vw,25px)}
+    .path{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.25rem;counter-reset:step}
+    .step{counter-increment:step;min-height:135px;padding:.95rem 1rem;border-radius:15px;border:1px solid var(--line);
+      background:linear-gradient(145deg,rgba(255,255,255,.052),rgba(255,255,255,.02))}
+    .step::before{content:counter(step,decimal-leading-zero);display:block;color:var(--cyan);font-size:clamp(17px,1.5vw,24px);font-weight:800;margin-bottom:.3rem}
+    .step strong{display:block;font-size:clamp(11px,.9vw,14px);margin-bottom:.35rem}.step span{display:block;color:var(--muted);font-size:clamp(9px,.7vw,11.5px);line-height:1.4}
+    .board{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:1.25rem}
+    .column{border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.028);padding:.85rem}
+    .column h3{font-size:clamp(13px,1.05vw,17px);padding-bottom:.6rem;border-bottom:1px solid var(--line);margin-bottom:.6rem}
+    .mini{padding:.62rem .65rem;margin:.5rem 0;border-radius:10px;background:rgba(255,255,255,.055);border-left:3px solid var(--mint)}
+    .mini strong{display:block;font-size:clamp(9px,.72vw,11.5px);line-height:1.25}.mini span{display:block;color:var(--muted);font-size:clamp(8px,.6vw,9.5px);margin-top:.2rem}
+    .column.active .mini{border-color:var(--cyan)}.column.gated .mini{border-color:var(--amber)}.column.future .mini{border-color:#8198a8}
+    .vision{display:grid;grid-template-columns:1.25fr .75fr;gap:1rem;margin-top:1.2rem}
+    .vision-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+    .vision-item{padding:.9rem 1rem;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.04)}
+    .vision-item strong{display:block;font-size:clamp(11px,.88vw,14px);margin-bottom:.3rem}.vision-item span{font-size:clamp(9px,.7vw,11.5px);line-height:1.4;color:var(--muted)}
+    .close-panel{display:flex;flex-direction:column;justify-content:space-between;padding:1rem 1.15rem;border-radius:17px;
+      background:linear-gradient(145deg,rgba(73,201,242,.16),rgba(103,150,255,.08));border:1px solid rgba(73,201,242,.27)}
+    .close-panel .big{font-size:clamp(20px,2vw,31px);font-weight:720;line-height:1.14;letter-spacing:-.025em}
+    .close-panel .big em{font-style:normal;color:var(--cyan)}.close-panel p{font-size:clamp(10px,.78vw,12.5px);color:var(--soft);line-height:1.42}
+    .nav{position:fixed;right:22px;bottom:18px;display:flex;gap:8px;z-index:50}
+    .nav button{width:42px;height:38px;border:1px solid rgba(143,207,240,.24);border-radius:11px;color:white;cursor:pointer;
+      background:rgba(8,31,51,.78);backdrop-filter:blur(12px);box-shadow:0 8px 22px rgba(0,0,0,.25)}
+    .nav button:hover{background:var(--cyan);color:var(--night)}
+    @media(max-width:900px){.slide{padding:5%}.hero-orbit{opacity:.5}.grid.four{grid-template-columns:repeat(2,1fr)}}
+    @media print{html,body{overflow:visible;background:white}.deck{display:block}.slide{display:block!important;width:13.333in;height:7.5in;box-shadow:none;page-break-after:always}.nav{display:none}@page{size:13.333in 7.5in;margin:0}}
+
+    /* Refined QuickTake visual system: clean clinical confidence with platform energy */
+    :root{
+      --night:#102a43;--navy:#173f67;--navy2:#24517a;--panel:#ffffff;--panel2:#f4f8fc;
+      --white:#102a43;--soft:#334e68;--muted:#6b8195;--line:rgba(34,79,116,.14);
+      --cyan:#1478ff;--blue:#645cff;--mint:#00a88f;--amber:#e38a16;--coral:#ec5c77;
+      --shadow:0 30px 90px rgba(32,71,103,.18);
+    }
+    html,body{
+      background:#e8f0f6;color:#102a43;
+      font-family:"Aptos","Segoe UI","Inter",system-ui,-apple-system,sans-serif;
+    }
+    .slide{
+      background:
+        radial-gradient(circle at 91% 8%,rgba(20,120,255,.12),transparent 28%),
+        radial-gradient(circle at 4% 98%,rgba(0,168,143,.09),transparent 34%),
+        linear-gradient(135deg,#fbfdff,#f4f8fc 58%,#eef5fa);
+      border:1px solid rgba(32,78,114,.08);
+    }
+    .slide::before{
+      opacity:.38;
+      background-image:
+        linear-gradient(rgba(32,79,116,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(32,79,116,.035) 1px,transparent 1px);
+      mask-image:linear-gradient(to bottom,black,transparent 78%);
+    }
+    .slide::after{
+      border-color:rgba(20,120,255,.12);
+      box-shadow:0 0 0 52px rgba(20,120,255,.025),0 0 0 104px rgba(0,168,143,.018);
+    }
+    h1,h2,h3{
+      color:#102a43;
+      font-family:"Aptos Display","Segoe UI Variable Display","Aptos","Segoe UI",sans-serif;
+      font-weight:650;
+    }
+    h1{font-weight:660;letter-spacing:-.052em}
+    h2{font-weight:640;letter-spacing:-.042em}
+    .gradient-text{
+      background:linear-gradient(100deg,#ffffff 3%,#e7f8ff 48%,#76d7ff 78%,#7c8dff);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .eyebrow{color:#1478ff}.eyebrow::before{background:linear-gradient(90deg,#1478ff,#00a88f)}
+    .lede{color:#405c73}
+    .footer{color:#71879a}.footer strong{color:#294a65}
+    .challenge,.card,.workpanel,.column,.vision-item,.insight-stat,.lever,.step{
+      background:rgba(255,255,255,.84);
+      border-color:rgba(36,82,119,.13);
+      box-shadow:0 12px 35px rgba(41,80,110,.065);
+    }
+    .challenge li,.workpanel li,.insight-copy{color:#405c73}
+    .card p,.stage p,.step span,.mini span,.vision-item span{color:#6b8195}
+    .card::after{background:radial-gradient(circle,rgba(20,120,255,.10),transparent 65%)}
+    .rail::before{background:linear-gradient(90deg,#00a88f,#1478ff,#e38a16,#91a6b6)}
+    .stage::before{background:#f8fbfe}
+    .insight-copy{background:linear-gradient(90deg,rgba(20,120,255,.09),rgba(20,120,255,.025));border-left-color:#1478ff}
+    .column .mini{background:#f6f9fc}
+    .proof{background:rgba(255,255,255,.11);border-color:rgba(213,238,255,.22);box-shadow:none}
+    .chip{background:rgba(255,255,255,.72)}
+    .close-panel{
+      background:linear-gradient(145deg,#153f6d,#1e5da0 55%,#2775c7);
+      border-color:rgba(20,120,255,.25);
+      box-shadow:0 20px 48px rgba(27,71,111,.19);
+    }
+    .close-panel .big,.close-panel p{color:#fff}.close-panel .big em{color:#83e4ff}
+    .close-panel .chip{color:#eaf7ff;background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18)}
+    .slide:first-child{
+      background:
+        radial-gradient(circle at 82% 14%,rgba(43,180,245,.28),transparent 31%),
+        radial-gradient(circle at 18% 108%,rgba(100,92,255,.22),transparent 38%),
+        linear-gradient(135deg,#0c2844,#123f68 52%,#132f55);
+      border:none;
+    }
+    .slide:first-child::before{
+      opacity:.18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+    }
+    .slide:first-child .eyebrow{color:#72d8ff}
+    .slide:first-child .eyebrow::before{background:linear-gradient(90deg,#72d8ff,#62e5cd)}
+    .slide:first-child .lede{color:#d9eaf5}
+    .slide:first-child .footer{color:#a9c4d7}.slide:first-child .footer strong{color:#eef8ff}
+    .slide:first-child .hero-orbit{border-color:rgba(129,221,255,.26)}
+    .slide:first-child .hero-core{
+      color:#fff;background:radial-gradient(circle at 34% 27%,#2c7eae,#113b62 68%);
+      border-color:rgba(180,234,255,.42);box-shadow:0 0 70px rgba(56,187,242,.26);
+    }
+    .slide:first-child .hero-core strong{color:#fff}.slide:first-child .hero-core small{color:#78e4ff}
+    .slide:first-child .proof strong{color:#fff}.slide:first-child .proof span{color:#b7d1e2}
+    .nav button{
+      color:#fff;background:rgba(16,42,67,.9);border-color:rgba(255,255,255,.14);
+      box-shadow:0 10px 26px rgba(17,48,75,.22);
+    }
+    .nav button:hover{background:#1478ff;color:#fff}
+    .footer{right:11%}
+    .progress{position:fixed;z-index:70;inset:0 0 auto;height:3px;background:rgba(255,255,255,.07)}
+    .progress span{display:block;height:100%;width:12.5%;background:linear-gradient(90deg,var(--cyan),var(--mint));transition:width .45s cubic-bezier(.22,.8,.24,1)}
+    .slide-count{position:fixed;z-index:55;left:22px;bottom:22px;padding:9px 12px;border-radius:999px;
+      color:#bcd4e5;background:rgba(4,20,34,.72);border:1px solid rgba(143,207,240,.2);backdrop-filter:blur(14px);
+      font-size:11px;font-weight:800;letter-spacing:.12em}
+    .loader{position:fixed;z-index:100;inset:0;display:grid;place-items:center;background:#061625;
+      transition:opacity .55s ease,visibility .55s ease}
+    .loader.done{opacity:0;visibility:hidden}
+    .loader-mark{display:grid;place-items:center;width:74px;height:74px;border-radius:50%;border:1px solid rgba(73,201,242,.28);
+      box-shadow:0 0 0 18px rgba(73,201,242,.05),0 0 64px rgba(73,201,242,.2);animation:pulse 1.25s ease-in-out infinite}
+    .loader-mark::after{content:"QT";font-size:16px;font-weight:900;letter-spacing:.08em;color:#8fe7ff}
+    .fullscreen{width:auto!important;padding:0 13px;font-size:11px;font-weight:800;letter-spacing:.06em}
+    @keyframes slide-arrive{from{opacity:0;transform:scale(.985) translateY(10px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
+    @keyframes content-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    @keyframes pulse{50%{transform:scale(1.06);box-shadow:0 0 0 26px rgba(73,201,242,.025),0 0 82px rgba(73,201,242,.28)}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+<div class="loader" id="loader" aria-hidden="true"><div class="loader-mark"></div></div>
+<div class="progress" aria-hidden="true"><span id="progress"></span></div>
+<main class="deck" aria-label="QuickTake Health platform progression presentation">
+  <section class="slide active">
+    <div class="content">
+      <div class="eyebrow">QuickTake Health Kiosk V2.0</div>
+      <h1 class="gradient-text">A stable clinical core with a clear path to platform scale</h1>
+      <p class="lede hero-lede">We took on the difficult foundation first—Windows, real clinical devices, offline operation, security and managed provisioning. That stable core is now creating possibilities well beyond the original application.</p>
+      <div class="hero-orbit" aria-hidden="true">
+        <span class="node n1"></span><span class="node n2"></span><span class="node n3"></span>
+        <div class="hero-core"><div><strong>Stable<br>App 1 core</strong><small>DELIVERED</small></div></div>
+      </div>
+      <div class="hero-proof">
+        <div class="proof"><strong>Clinical core</strong><span>Integrated and stable</span></div>
+        <div class="proof"><strong>Managed provisioning</strong><span>Path demonstrated</span></div>
+        <div class="proof"><strong>Platform options</strong><span>Now expanding</span></div>
+      </div>
+    </div>
+    <div class="footer"><strong>QuickTake × PureLogics</strong><span>Platform progression and delivery strategy</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="eyebrow">The challenge we accepted</div>
+      <h2>We took on the hard part first</h2>
+      <p class="lede">The engagement began with more than a software build. It required a reliable operating model across application, device, cloud, deployment and regulated-delivery concerns.</p>
+      <div class="split">
+        <article class="challenge take">
+          <div class="label">What had to be solved</div>
+          <h3>A clinical kiosk with real operational constraints</h3>
+          <ul>
+            <li>Windows-first kiosk execution across physical devices</li>
+            <li>Detecto, Nonin, Dermalog and camera integration</li>
+            <li>Offline continuity, session integrity and secure cloud sync</li>
+            <li>Member and admin experiences around the same session record</li>
+            <li>Managed provisioning and installation, with update, rollback and release controls progressing</li>
+          </ul>
+        </article>
+        <article class="challenge solve">
+          <div class="label">What the engagement produced</div>
+          <h3>A stable, manageable and extensible platform core</h3>
+          <ul>
+            <li>Hardware-backed App 1 journeys working end to end</li>
+            <li>Operational portals, permissions and device administration</li>
+            <li>Managed provisioning through Microsoft Intune</li>
+            <li>A shared architecture ready to support controlled variants</li>
+            <li>A delivery model that keeps progress moving around dependencies</li>
+          </ul>
+        </article>
+      </div>
+      <div class="insight-bar">
+        <div class="insight-copy">The value is not only that App 1 works. The deeper achievement is that the core can now absorb new products, integrations and operating capabilities without starting over.</div>
+        <div class="insight-stat"><strong>1 → many</strong><span>Core platform, multiple opportunities</span></div>
+      </div>
+    </div>
+    <div class="footer"><strong>QuickTake Health</strong><span>Foundation before expansion</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="eyebrow">Milestone position</div>
+      <h2>The core is stable—and it is creating options</h2>
+      <p class="lede">App 1 has moved beyond broad feature development. The work now is to validate and release it with control while the shared platform enables the next set of opportunities.</p>
+      <div class="grid four">
+        <article class="card mint"><span class="state">Delivered</span><h3>App 1 core</h3><p>Windows kiosk, member portal, admin portal, backend, QR and consent journeys.</p></article>
+        <article class="card mint"><span class="state">Delivered</span><h3>Vitals hardware</h3><p>Detecto Icon, Nonin, Dermalog and camera-supported identity and measurement paths.</p></article>
+        <article class="card blue"><span class="state">Demonstrated</span><h3>Managed provisioning</h3><p>Intune enrollment, device naming, synchronization, driver handling and application installation.</p></article>
+        <article class="card"><span class="state">Unlocked</span><h3>Platform pathways</h3><p>App 2, recovery architecture, operational integration and interoperability can build from the same core.</p></article>
+      </div>
+      <div class="rail">
+        <div class="stage"><small>Established</small><h3>Clinical foundation</h3><p>Stable App 1 and integrated vital-sign devices.</p></div>
+        <div class="stage"><small>Current</small><h3>Release control</h3><p>UAT, evidence, documentation and production preparation.</p></div>
+        <div class="stage"><small>Dependency-led</small><h3>Operations layer</h3><p>KIS/KNECT, non-vitals hardware and resilience.</p></div>
+        <div class="stage"><small>Expansion</small><h3>Connected platform</h3><p>Wellness, EHR/EMR and future service models.</p></div>
+      </div>
+    </div>
+    <div class="footer"><strong>QuickTake Health</strong><span>A completed core with compounding value</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="eyebrow">Sprint 10 posture</div>
+      <h2>Turn available capacity into forward leverage</h2>
+      <p class="lede">We are not treating external dependencies as reasons to slow down. We are advancing the work that is ready and preparing gated work so it can move immediately when inputs arrive.</p>
+      <div class="worksplit">
+        <article class="workpanel now">
+          <h3>Advancing now</h3>
+          <ul>
+            <li>App 1 UAT support, regression and release evidence</li>
+            <li>FDA/QMS documentation and release-control package</li>
+            <li>App 2 protected shared-platform and interface work</li>
+            <li>Skoop closeout coordination and validation readiness</li>
+            <li>Release notes, Intune guidance and provisioning workflow</li>
+          </ul>
+        </article>
+        <article class="workpanel gated">
+          <h3>Prepared, but dependency-gated</h3>
+          <ul>
+            <li>KIS / KNECT live integration and facility testing</li>
+            <li>Remaining non-vitals hardware integration</li>
+            <li>Penetration-test execution when stable-candidate and UAT entry gates are met</li>
+            <li>Live FaceHeart SDK and production BP capture</li>
+            <li>MeldCX mobilization and vendor validation under the approved workstream</li>
+          </ul>
+        </article>
+      </div>
+      <div class="leverage">
+        <div class="lever">Stable App 1 core</div><div class="operator">+</div>
+        <div class="lever">Capacity redirected intelligently</div><div class="operator">=</div>
+        <div class="lever">More platform value without destabilization</div>
+      </div>
+    </div>
+    <div class="footer"><strong>QuickTake Health</strong><span>Active work moves; gated work stays controlled</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="eyebrow">Delivery philosophy</div>
+      <h2>Disciplined expansion—not scope drift</h2>
+      <p class="lede">The platform is opening new avenues because the foundation was designed and delivered correctly. Each next step reuses the core, protects the release candidate and stays explicit about its dependency and commercial position.</p>
+      <div class="grid three">
+        <article class="card"><span class="state">Efficiency</span><h3>No idle delivery capacity</h3><p>Engineering and QA continue on ready work instead of waiting for hardware, access or vendor responses.</p></article>
+        <article class="card blue"><span class="state">Control</span><h3>No premature technical or commercial commitment</h3><p>Paid SDKs, production services and vendor-dependent builds activate when the product is ready to benefit from them.</p></article>
+        <article class="card mint"><span class="state">Compounding value</span><h3>Every solved layer enables the next</h3><p>Deployment enables fleet control. Shared services enable App 2. Recovery design enables resilience. Interoperability enables scale.</p></article>
+      </div>
+      <div class="insight-bar">
+        <div class="insight-copy">This is how a difficult kiosk project becomes a platform strategy: not through uncontrolled expansion, but through careful reuse, visible gates and deliberate business decisions.</div>
+        <div class="insight-stat"><strong>Protect</strong><span>Core stability, budget and trust</span></div>
+      </div>
+    </div>
+    <div class="footer"><strong>QuickTake Health</strong><span>Rigor creates room for innovation</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="eyebrow">Path to controlled release</div>
+      <h2>A sequenced path with explicit gates</h2>
+      <p class="lede">The path remains clear without forcing dates onto dependencies we do not control.</p>
+      <div class="path">
+        <div class="step"><strong>Validate the complete bench build</strong><span>Load the stable App 1 candidate onto the prototype environment with available vital-sign hardware.</span></div>
+        <div class="step"><strong>Align QuickTake and KIS</strong><span>Confirm provisioning, responsibilities, interfaces, access and the facility test process.</span></div>
+        <div class="step"><strong>Integrate remaining non-vitals hardware</strong><span>Complete smart-board, recovery, power-control or related work when hardware and vendor inputs are available.</span></div>
+        <div class="step"><strong>Close UAT and stabilize</strong><span>Disposition client feedback, retest affected flows and document known limitations.</span></div>
+        <div class="step"><strong>Complete the gated security-validation path</strong><span>Execute penetration testing only when the stable-candidate, environment and UAT entry gates are met.</span></div>
+        <div class="step"><strong>Authorize a controlled release</strong><span>Use approved evidence, runbooks, rollback controls and stakeholder sign-off to move forward.</span></div>
+      </div>
+    </div>
+    <div class="footer"><strong>QuickTake Health</strong><span>No gate is assumed; each is evidenced</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="eyebrow">One operating view</div>
+      <h2>Every workstream has a clear position</h2>
+      <p class="lede">Delivered, active, gated and future tracks stay visible without being mixed into one undifferentiated backlog.</p>
+      <div class="board">
+        <div class="column">
+          <h3>Delivered Baseline</h3>
+          <div class="mini"><strong>App 1 functional core</strong><span>Development-complete validation baseline</span></div>
+          <div class="mini"><strong>Vital-sign devices</strong><span>Integrated and available</span></div>
+          <div class="mini"><strong>Intune provisioning</strong><span>Demonstrated managed path</span></div>
+          <div class="mini"><strong>Skoop integration</strong><span>QuickTake-side work demonstrated</span></div>
+        </div>
+        <div class="column active">
+          <h3>Active now</h3>
+          <div class="mini"><strong>App 1 UAT and evidence</strong><span>Release readiness</span></div>
+          <div class="mini"><strong>App 2 protected progression</strong><span>Capacity-controlled work</span></div>
+          <div class="mini"><strong>Security and FDA/QMS evidence</strong><span>Release-control package</span></div>
+          <div class="mini"><strong>Release package</strong><span>Client handoff readiness</span></div>
+        </div>
+        <div class="column gated">
+          <h3>Dependency-gated</h3>
+          <div class="mini"><strong>KIS / KNECT live work</strong><span>Access and interface pending</span></div>
+          <div class="mini"><strong>Non-vitals hardware</strong><span>Bench-kit dependency</span></div>
+          <div class="mini"><strong>Penetration-test execution</strong><span>Stable-candidate and UAT gates</span></div>
+          <div class="mini"><strong>FaceHeart live integration</strong><span>Production SDK and vendor inputs pending</span></div>
+          <div class="mini"><strong>MeldCX mobilization</strong><span>Approved; vendor inputs pending</span></div>
+        </div>
+        <div class="column future">
+          <h3>Future / commercial</h3>
+          <div class="mini"><strong>EHR/EMR interoperability</strong><span>Separate solution strategy</span></div>
+          <div class="mini"><strong>App 2 release and UAT</strong><span>Later delivery stage</span></div>
+          <div class="mini"><strong>Broader resilience services</strong><span>Evidence and scope required</span></div>
+          <div class="mini"><strong>Monitoring and analytics</strong><span>Separate operating model</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><strong>QuickTake Health</strong><span>Position • dependency • next decision</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="eyebrow">What the foundation makes possible</div>
+      <h2>A stable kiosk core creates a path toward a connected operating platform</h2>
+      <p class="lede">The next avenues are now practical because the core foundation has now been established—not because the current scope is being blurred.</p>
+      <div class="vision">
+        <div class="vision-grid">
+          <div class="vision-item"><strong>App 1 Clinical</strong><span>A development-complete clinical baseline progressing through controlled validation and release evidence.</span></div>
+          <div class="vision-item"><strong>App 2 Wellness</strong><span>A distinct experience progressing on shared services, with FaceHeart introduced when the production SDK is ready.</span></div>
+          <div class="vision-item"><strong>MeldCX Resilience</strong><span>An approved resilience workstream progressing through controlled mobilization, vendor validation and evidence-backed implementation.</span></div>
+          <div class="vision-item"><strong>KIS / KNECT Operations</strong><span>Bench, provisioning and facility responsibilities aligned around supported interfaces.</span></div>
+          <div class="vision-item"><strong>EHR/EMR Interoperability</strong><span>A reusable commercial integration strategy across clients using the same system.</span></div>
+          <div class="vision-item"><strong>QuickTake Operating Model</strong><span>Greater delivery leverage, supportability and a clearer path to scalable services.</span></div>
+        </div>
+        <div class="close-panel">
+          <div>
+            <span class="chip"><i></i> The engagement has evolved</span>
+            <div class="big" style="margin-top:1rem">From solving a difficult product build to shaping <em>how QuickTake can scale.</em></div>
+          </div>
+          <p>Built with technical rigor. Sequenced with business judgment. Designed to keep opening the next right opportunity.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><strong>QuickTake × PureLogics</strong><span>Stable core. Controlled expansion. Compounding value.</span></div>
+  </section>
+</main>
+<nav class="nav" aria-label="Slide navigation">
+  <button class="fullscreen" id="fullscreen" aria-label="Toggle fullscreen">FULLSCREEN</button>
+  <button id="prev" aria-label="Previous slide">←</button>
+  <button id="next" aria-label="Next slide">→</button>
+</nav>
+<div class="slide-count" id="slide-count" aria-live="polite">01 / 08</div>
+<script>
+  const slides=[...document.querySelectorAll(".slide")];let index=0;
+  const progress=document.getElementById("progress"),count=document.getElementById("slide-count");
+  function show(next){slides[index].classList.remove("active");index=(next+slides.length)%slides.length;slides[index].classList.add("active");progress.style.width=`${((index+1)/slides.length)*100}%`;count.textContent=`${String(index+1).padStart(2,"0")} / ${String(slides.length).padStart(2,"0")}`;history.replaceState(null,"",`#slide-${index+1}`)}
+  document.getElementById("prev").onclick=()=>show(index-1);
+  document.getElementById("next").onclick=()=>show(index+1);
+  document.getElementById("fullscreen").onclick=()=>document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();
+  addEventListener("keydown",e=>{if(["ArrowRight","PageDown"," "].includes(e.key))show(index+1);if(["ArrowLeft","PageUp"].includes(e.key))show(index-1);if(e.key==="Home")show(0);if(e.key==="End")show(slides.length-1);if(e.key.toLowerCase()==="f")document.getElementById("fullscreen").click()});
+  let touchX=0;addEventListener("touchstart",e=>touchX=e.changedTouches[0].screenX,{passive:true});addEventListener("touchend",e=>{const d=e.changedTouches[0].screenX-touchX;if(Math.abs(d)>45)show(index+(d<0?1:-1))},{passive:true});
+  const hashSlide=Number(location.hash.replace("#slide-",""));if(hashSlide>=1&&hashSlide<=slides.length)show(hashSlide-1);else show(0);
+  addEventListener("load",()=>setTimeout(()=>document.getElementById("loader").classList.add("done"),420));
+</script>
+</body>
+</html>
