@@ -225,46 +225,7 @@
       box-shadow:0 10px 26px rgba(17,48,75,.22);
     }
     .nav button:hover{background:#1478ff;color:#fff}
-    /* Full-canvas presentation system: preserve the narrative while letting it breathe. */
-    .slide{
-      width:100vw;height:100vh;box-shadow:none;border-radius:0;
-      padding:clamp(34px,4.7vh,62px) clamp(42px,5vw,92px) clamp(52px,6.3vh,78px);
-    }
-    .content{max-width:1760px;margin:0 auto}
-    h1{font-size:clamp(48px,5.3vw,88px);max-width:min(82vw,1320px)}
-    h2{font-size:clamp(36px,3.85vw,64px);max-width:min(91vw,1480px)}
-    h3{font-size:clamp(17px,1.5vw,25px)}
-    .lede{font-size:clamp(16px,1.38vw,23px);max-width:min(79vw,1280px);margin-top:clamp(16px,2.1vh,26px)}
-    .hero-lede{max-width:min(59vw,940px)}
-    .eyebrow{font-size:clamp(11px,.84vw,14px);margin-bottom:clamp(12px,1.8vh,22px)}
-    .hero-orbit{right:4.7vw;top:8.5vh;width:min(36vw,56vh)}
-    .hero-proof{right:3.8vw;bottom:7.2vh;width:min(42vw,730px);gap:clamp(10px,.8vw,15px)}
-    .proof{padding:clamp(12px,1vw,18px)}
-    .proof strong{font-size:clamp(14px,1.08vw,18px)}.proof span{font-size:clamp(10px,.74vw,13px)}
-    .split,.grid,.rail,.worksplit,.path,.board,.vision{margin-top:clamp(20px,3vh,38px)}
-    .split{gap:clamp(16px,1.5vw,28px);min-height:43vh}
-    .challenge{padding:clamp(18px,1.55vw,29px);display:flex;flex-direction:column;justify-content:center}
-    .challenge li{font-size:clamp(12px,.94vw,16px);line-height:1.5}
-    .grid{gap:clamp(13px,1.2vw,22px);min-height:42vh}
-    .card{min-height:min(21vh,220px);padding:clamp(17px,1.35vw,26px);display:flex;flex-direction:column;justify-content:center}
-    .card p{font-size:clamp(12px,.86vw,15px);line-height:1.5}
-    .stage p,.step span,.vision-item span{font-size:clamp(11px,.76vw,14px);line-height:1.48}
-    .rail{min-height:37vh;align-items:stretch}
-    .stage{display:flex;flex-direction:column;justify-content:center}
-    .worksplit{min-height:36vh}
-    .workpanel{padding:clamp(17px,1.35vw,25px);display:flex;flex-direction:column;justify-content:center}
-    .workpanel li{font-size:clamp(11px,.84vw,15px);line-height:1.48}
-    .path{min-height:43vh}
-    .step{min-height:min(18vh,188px);padding:clamp(15px,1.15vw,23px);display:flex;flex-direction:column;justify-content:center}
-    .board{min-height:53vh}
-    .column{padding:clamp(12px,1vw,18px);display:flex;flex-direction:column}
-    .mini{padding:clamp(9px,.75vw,13px);flex:1;display:flex;flex-direction:column;justify-content:center}
-    .mini strong{font-size:clamp(10px,.76vw,13px)}.mini span{font-size:clamp(9px,.65vw,11px)}
-    .vision{gap:clamp(15px,1.3vw,24px);min-height:49vh}
-    .vision-grid{gap:clamp(11px,.9vw,17px);grid-template-rows:repeat(3,1fr)}
-    .vision-item{padding:clamp(14px,1.15vw,22px);display:flex;flex-direction:column;justify-content:center}
-    .vision-item strong{font-size:clamp(12px,.92vw,16px)}
-    .footer{left:5vw;right:12vw;bottom:2.5vh;font-size:clamp(10px,.72vw,12px)}
+    .footer{right:11%}
     .progress{position:fixed;z-index:70;inset:0 0 auto;height:3px;background:rgba(255,255,255,.07)}
     .progress span{display:block;height:100%;width:12.5%;background:linear-gradient(90deg,var(--cyan),var(--mint));transition:width .45s cubic-bezier(.22,.8,.24,1)}
     .slide-count{position:fixed;z-index:55;left:22px;bottom:22px;padding:9px 12px;border-radius:999px;
@@ -280,15 +241,6 @@
     @keyframes slide-arrive{from{opacity:0;transform:scale(.985) translateY(10px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
     @keyframes content-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
     @keyframes pulse{50%{transform:scale(1.06);box-shadow:0 0 0 26px rgba(73,201,242,.025),0 0 82px rgba(73,201,242,.28)}}
-    @media(max-width:900px){
-      html,body{overflow:auto}.slide{min-height:100vh;height:auto;overflow:auto;padding:34px 24px 80px}
-      .content{height:auto;min-height:calc(100vh - 114px)}
-      h1,h2,.lede,.hero-lede{max-width:100%}
-      .hero-orbit{opacity:.18}.hero-proof{position:relative;right:auto;bottom:auto;width:100%;margin-top:28px}
-      .split,.worksplit,.vision{grid-template-columns:1fr}.grid.four,.grid.three,.board,.path{grid-template-columns:repeat(2,1fr)}
-      .split,.grid,.rail,.worksplit,.path,.board,.vision{min-height:0}
-      .footer{position:relative;left:auto;right:auto;bottom:auto;margin-top:30px}
-    }
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}}
   </style>
 </head>
