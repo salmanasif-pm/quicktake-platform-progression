@@ -10,33 +10,41 @@ Completes the archive of the Trello board **PL Sales with Ahmed(AE)**
 |---|---|
 | Cards on the board | 368 |
 | Archived before this work | 32 |
-| Archived by the runs in this repo | 37 (372 files copied, 37 diagrams) |
-| **Remaining** | **299** — list 06 `Closed Lost` (80), list 07 `On Hold` (219) |
+| Archived by the runs in this repo | 117 (572 files copied, 58 diagrams) |
+| **Remaining** | **219** — list 07 `On Hold` |
 
-**Lists 04 and 05 are complete**: `Done, (Waiting on Decision)` at 19/19 and
-`Closed Won` at 28/28. `01 - BA Team (Pending)` has 0 cards, so no folder is
-needed for it. What remains is `Closed Lost` (80 cards) and `On Hold` (219).
+**Lists 04, 05 and 06 are complete**: `Done, (Waiting on Decision)` at
+19/19, `Closed Won` at 28/28 and `Closed Lost` at 80/80. `01 - BA Team
+(Pending)` has 0 cards, so no folder is needed for it. Only `On Hold` (219
+cards) remains.
 
-The last five `Closed Won` cards were the largest on the board — live project
-folders with PMO / BA / QA / Deliverables / Requirements subtrees, up to 12
-subfolders each. Card 41 alone yielded 45 files and card 205 fifty-five. Each
-batch's inventory file records what was walked and what was deliberately not
-(recording archives, level-2 sprint folders, a personal Google Takeout
-export); see `NOT_WALKED` in `data/list05*_inventory.py`.
+The two lists have opposite shapes. `Closed Won` cards are live project
+folders with PMO / BA / QA / Deliverables / Requirements subtrees, up to
+twelve subfolders each — card 41 alone yielded 45 files and card 205
+fifty-five. `Closed Lost` cards are mostly a roadmap, a requirements doc and
+the sales-call recordings the spec skips; nineteen of the eighty resolve to a
+`card.md` with no copied files at all, for reasons the inventories record
+individually (nothing but recordings, a source folder that no longer exists,
+a folder that exists and is genuinely empty, or no Drive link on the card).
+
+Each batch's inventory file records what was walked and what was deliberately
+not — recording archives, level-2 sprint folders, a personal Google Takeout
+export; see `NOT_WALKED` and `SUBFOLDERS_TO_WALK` in
+`data/list0*_inventory.py`.
 
 ### card.md is deferred by design
 
 `card.md` is the spec's lowest-priority artifact (section 1) and the most
 expensive thing to write through a tool call, since the content has to
-round-trip. All 37 are rendered locally under `data/cardmd/`; run
+round-trip. All 117 are rendered locally under `data/cardmd/`; run
 `upload_cardmd.py` once on a machine with credentials to place them:
 
 ```bash
 python3 upload_cardmd.py          # idempotent, seconds
 ```
 
-Every other part of those 37 cards — folder tree, copied files, diagrams — is
-already in Drive.
+Every other part of those 117 cards — folder tree, copied files, diagrams —
+is already in Drive.
 
 ## Files
 
