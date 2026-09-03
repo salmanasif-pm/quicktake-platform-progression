@@ -10,11 +10,18 @@ Completes the archive of the Trello board **PL Sales with Ahmed(AE)**
 |---|---|
 | Cards on the board | 368 |
 | Archived before this work | 32 |
-| Archived by the List 04 run in this repo | 9 (34 files copied) |
-| **Remaining** | **327** — list 05 (28), list 06 (80), list 07 (219) |
+| Archived by the runs in this repo | 15 (57 files copied, 2 diagrams) |
+| **Remaining** | **321** — list 05 (22 of 28 left), list 06 (80), list 07 (219) |
 
-List 04 `Done, (Waiting on Decision)` is complete at 19/19.
+List 04 `Done, (Waiting on Decision)` is complete at 19/19. List 05
+`Closed Won` has 6 of 28 done (cards 17, 24, 49, 104, 168, 203) — the six whose
+linked folder has no subfolders, so a single listing was complete discovery.
 `01 - BA Team (Pending)` has 0 cards, so no folder is needed for it.
+
+The 22 List 05 cards still open are live project folders with PMO / BA / QA /
+Deliverables / Requirements subfolders; `data/list05_inventory.py` records which
+ones need the script's one-level recursion, and how many subfolders each has, so
+that work does not have to be rediscovered.
 
 ## Files
 
@@ -130,6 +137,16 @@ Both are covered by tests.
   duplicated.
 - Two lists therefore differ from the spec's per-list counts by ±1 (02 has 1,
   03 has 3); the total of 368 is unchanged.
+
+## A Drive query trap worth knowing
+
+Listing several parents at once with `parentId = 'a' or parentId = 'b'` is not
+safe: if **any one** parent in the disjunction is inaccessible, the whole query
+comes back as an empty result rather than an error, silently hiding the children
+of the parents that *were* readable. This was hit twice (cards 458 and 104, both
+of whose folders are gone). Folders must therefore be listed one parent per
+query, which is what the script does — `Drive.list_children` takes a single
+folder id and records a per-folder error on failure.
 
 ## Known limitations
 
