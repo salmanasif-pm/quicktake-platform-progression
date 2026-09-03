@@ -36,7 +36,8 @@ DATA = os.path.join(HERE, "data")
 # Destination folder maps written by the connector runs, newest last.
 DEST_MAPS = ["list04_dest_folders.json", "list05_dest_folders.json",
              "list05c_dest_folders.json", "list05d_dest_folders.json",
-             "list05e_dest_folders.json", "list06a_dest_folders.json"]
+             "list05e_dest_folders.json", "list06a_dest_folders.json",
+             "list06b_dest_folders.json"]
 
 
 def load_dest_map():
