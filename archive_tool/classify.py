@@ -255,9 +255,11 @@ def is_diagram(f, folder_name=""):
     if ext in DIAGRAM_EXTS:
         return has_diagram_keyword(name, strong_only=ext in PAGED_EXTS)
 
-    # Slides that are explicitly a diagram deliverable.
+    # Slides count only when explicitly a diagram deliverable. A deck named
+    # "WorkFlow & Kickoff Document" is a kickoff document, so the weaker
+    # workflow/flow family is not enough here: the name has to say "diagram".
     if mime == GOOGLE_SLIDES:
-        return has_diagram_keyword(name, strong_only=True)
+        return "diagram" in (base_name(name) or "").lower()
 
     return False
 

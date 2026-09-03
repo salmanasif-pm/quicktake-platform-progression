@@ -10,18 +10,18 @@ Completes the archive of the Trello board **PL Sales with Ahmed(AE)**
 |---|---|
 | Cards on the board | 368 |
 | Archived before this work | 32 |
-| Archived by the runs in this repo | 15 (57 files copied, 2 diagrams) |
-| **Remaining** | **321** — list 05 (22 of 28 left), list 06 (80), list 07 (219) |
+| Archived by the runs in this repo | 18 (94 files copied, 2 diagrams) |
+| **Remaining** | **318** — list 05 (19 of 28 left), list 06 (80), list 07 (219) |
 
 List 04 `Done, (Waiting on Decision)` is complete at 19/19. List 05
-`Closed Won` has 6 of 28 done (cards 17, 24, 49, 104, 168, 203) — the six whose
-linked folder has no subfolders, so a single listing was complete discovery.
+`Closed Won` has 9 of 28 done (cards 17, 24, 49, 104, 122, 168, 203, 204, 422).
 `01 - BA Team (Pending)` has 0 cards, so no folder is needed for it.
 
-The 22 List 05 cards still open are live project folders with PMO / BA / QA /
-Deliverables / Requirements subfolders; `data/list05_inventory.py` records which
-ones need the script's one-level recursion, and how many subfolders each has, so
-that work does not have to be rediscovered.
+The 19 List 05 cards still open are live project folders with PMO / BA / QA /
+Deliverables / Requirements subfolders — up to 12 subfolders each;
+`data/list05_inventory.py` records which ones need the script's one-level
+recursion, and how many subfolders each has, so that work does not have to be
+rediscovered.
 
 ## Files
 
@@ -114,7 +114,13 @@ duplicates it:
    diagram); on paged formats a stronger signal is required (`diagram`,
    `workflow`, `flow`, `wireframe`, `system map`, …) or a diagram-ish containing
    folder. See `WEAK_DIAGRAM_KEYWORDS`.
-2. **Files are classified before duplicates are suppressed.** §7 presents dedup
+2. **Slides are diagrams only when the name says "diagram".** §7 allows "slides
+   that are clearly a diagram deliverable", and the workflow/flow keyword family
+   would have swept in the real decks `MoneyMate | WorkFlow & Kickoff Document`
+   and `247CAD - WorkFlow & Kickoff Document`, which are kickoff documents. For
+   Slides the name now has to contain "diagram" (or the containing folder has to
+   be diagram-ish).
+3. **Files are classified before duplicates are suppressed.** §7 presents dedup
    first. Running it first makes a skipped video get reported as "duplicate of
    the copy of itself" instead of as a video, which distorts the §10 category
    totals. Dedup now applies only to the copy-worthy set; the net set of copied

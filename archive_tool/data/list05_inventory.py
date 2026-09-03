@@ -85,6 +85,67 @@ INVENTORY = {
             ("1vXTTbjYIVi0uQYlWtuegYxVNhG0wpVsE", "Requirements.docx", DOCX, 199643, ""),
         ],
     },
+    122: {
+        "source_folders": ["1cSBUKpPhRTDBHuyJbzBmT4T5nZis9JwO"],
+        "files": [
+            ("1EKpcr2_E6EVvp9Ho7kLHq0Cu_oBQ6eB83crDDlIIKS0", "Transcript of Meeting from Scope discussion for MoneyMate - March 20, 2026", DOC, 18906, ""),
+            ("1iFvfqoCt1A0aw8m6Kg9BG3ht8metWRuFFRY_8xZzxhc", "Emails recieved 24-03-2026", DOC, 7728, ""),
+            ("1Tzil9edXE7cQ9I5YA6yoBLIkgf0jajBiw0ZczL7kiu8", "EpocHarvest SOW Review - Elena Findings vs. Change Requests", DOC, 19088, ""),
+            ("19X5useLF0_ahm3tE9fxtPG-oOc-C0NcWGLWnDFwBLZc", "AWS DevOps Engagement Rules - MoneyMate / EpocHarvest", DOC, 10527, ""),
+            ("1CVE-7Eg2wrXCqgC_pbN-br4zX8pVX88BrBe2Vg0LE0k", "Quries from Prospect's side", DOC, 7603, ""),
+            ("1XB63VfLY7RdUOkCZxhasmR2zZxL1dmld", "MX_API_Call_Map.pdf", PDF, 396738, ""),
+            ("1F9ImG3igqYq7jLMUSyPzvvvA9jX1fkaP8p5mJOrUT5A", "PM Tauqeer - R&D", DOC, 4545, ""),
+            ("1q9vTDfsWUI87jcaWh-JZJvEMU6tj2y7YcqPu_xvjawA", "Email Responses", DOC, 4512, ""),
+            ("1DazOVasEHhWFVVCwilGlmAXUPCVZ2uwB", "MoneyMate_RFP_Plaid_Migration (4).pdf", PDF, 158554, ""),
+            ("1Fqv1x4lqXXkTN_9EK-lSMEPoFcQXDj9F", "MVP 2.0 Technical Requirements V4 (1).pdf", PDF, 7637286, ""),
+            ("1NAYroiwRBhnSk1_ZAfnOei2Fy03_q7G6j6g7OWIFz7Y", "Details from Client on 5th March", DOC, 934062, ""),
+            ("1-EzLdcqefbxF-AKLNUzljfcRy07aj-3dUJTYUHdxQuU", "Dev Request from another company", DOC, 2576, ""),
+            ("1X5y2SojlVwE44x5PZBhgeMvtkUIkPeVBDAxC_ic605s", "Scoping Meeting - Integration, Account Identification & Feature Support", DOC, 327856, ""),
+            ("1N4xRC0CsHwi8v2gy5lGT3DrMFCCHp8FAP2GtppbiNlg", "Last Email", DOC, 9963, ""),
+            ("1FfGvSGo7_8IGrXXqc81cahYr4QXcgPjo", "Money_Mate_Code_Review_ (1).pdf", PDF, 31097502, ""),
+            ("1T1oVrtxc0dmW0UHyscPq_1qx1uL2_mvo", "REQUEST FOR PROPOSAL - Plaid Migration.pdf", PDF, 136148, ""),
+            ("1xdUpMjBtls_5C3HlKn8NKMFsSUvNVq4T7yV9KXXQcj0", "Email from Cleint", DOC, 2794, ""),
+            ("1RXxsm9BgaYYZxK-92KI296_bqP2KDHXC", "Proprietary Information Intellectual Property and Nondisclosure Agreement for EpocHarvest Inc..pdf", PDF, 243788, ""),
+            ("1ZmO1DOy2f5m7hrnSx72Il8YrO0-LP0BSO2afZ9c0iZ0", "QAs", DOC, 4145, ""),
+            ("11UjKwZ4hDbLuh32wV8ZzrBimVqc2NYtM", "Intro call.mp4", MP4, 97122861, ""),
+            ("1Tl1X3ygup6HfZiLpBOlWo1J3--Tj_mYJNjAQOlqXcFM", "MoneyMate |  WorkFlow & Kickoff Document", SLIDES, 1095233, ""),
+            ("1uWSNHnClXXv1Y7nbk3pl0up6C3ZmsN56XC96sJKO5B8", "TechDebt Management - Roadmap", SLIDES, 512660, ""),
+            # subfolder: Phase 2
+            ("1TXAyNyjudzfpPgmst96O090J_h_e-GmL6qvJcJC93UU", "MoneyMate AWS Infrastructure Readiness / Observability Change Order", DOC, 20356, "Phase 2"),
+            # subfolder: MX to Plaid BA Deliverables
+            ("13a-vox5eill9hblfmSQU1lu4gapExrWZJKPw-o8BY3E", "MoneyMate - MX to Plain Migration - Task Breakdown", SHEET, 4115, "MX to Plaid BA Deliverables"),
+            ("1vuy6O8zR2ncFGvKeIKKDMQ6U-dbsG76-", "MoneyMate Proposal - Proposal Document v1.1 (Plaid Migration & Targeted Security Remediation).pdf", PDF, 678051, "MX to Plaid BA Deliverables"),
+            ("1GnD7cIFm_BY9JaZzfXgcXdFXi-FM3YyK", "MoneyMate Proposal Technical Companion - v1.1.pdf", PDF, 638686, "MX to Plaid BA Deliverables"),
+            ("17UxaqIeQZdLjPrH3TZHlE2qqZNPAFcVZ", "MoneyMate Proposal Change Log - v1.1.pdf", PDF, 148384, "MX to Plaid BA Deliverables"),
+            ("1eWbmmEFrGmnIgPyjiVovQfnuhycRaJ2A2P9GO8kmJmM", "Email March 5, 2026 - Next steps before our scoping call (CI + routing/I&E pipeline)", DOC, 2715, "MX to Plaid BA Deliverables"),
+            ("18PdcIltOJrLiiM-1iwcZ6rHo1l7_TH7xn_ptcNLnskw", "Email - March 4, 2026 - MoneyMate Plaid migration and a few quick pre-reads", DOC, 3793, "MX to Plaid BA Deliverables"),
+        ],
+    },
+    204: {
+        "source_folders": ["1TdfvFOoLzOYwpgxd8pSwqoLC8PEjhW4j"],
+        "files": [
+            ("10cl6aRbiyKJA_sHCQbQuua5z07CMd0v5", "Berd (Tech) - Recording.mp4", MP4, 463926556, ""),
+            ("1z8UkHKATI6ug1J_sdG70WcVx4RitaxJA", "Berd - Prekickoff Meeting.mp4", MP4, 170086223, ""),
+            ("1T9vHDMeiH0WjSdtrUsYTzL3_y5VZo5YEK3MXJJOMtM4", "NOTES Captured", DOC, 3426, ""),
+            ("1Wm_8Vf5MK0sOkRhFF72VPfB8qO57VVCDD_ctL-x7kNk", "MIRO Diagrams", DOC, 1024, ""),
+            # subfolder: QA
+            ("1ZtZxcljydqwwvKiSQ2eYDpQGP_iY-pH_NHPBgP4Dw40", "Berd Spoke Test Management Sheet", SHEET, 31517, "QA"),
+            ("1IyRHpNX6VZG5vW5jabGPYzZ9MxhHttpB", "Berd Spokes Test Plan Document.docx", DOCX, 17866, "QA"),
+        ],
+    },
+    422: {
+        "source_folders": ["1SUcHFYDRj28jThUll2wz-jOhohZ4HIIq"],
+        "files": [
+            ("1w2bhGjyC0iZBLR2iXFlvCO9JDT0dUH9I", "Intro.mp4", MP4, 216883765, ""),
+            ("10mQ45a98b7ufCtklPK0kZYBfjKSZERyL1vo6UMcUOaQ", "SkillResy Mobile App - Roadmap & Estimate", SHEET, 82426, ""),
+            ("1PTf91jXxiSWGYmdrBeFjBuTvne4t9obh74dRRruHWcU", "SkillResy Web App - Roadmap & Estimate", SHEET, 29399, ""),
+            ("1woqAgPqBRo0uC0UvC-9EZru9iMHXOZFc", "Interview Assistant (Dark Mode).pdf", PDF, 1924531, ""),
+            ("1OL3mAnoVHrrEAUXSd71Qa947GEdmqLEp", "Interview Assistant (Light Mode).pdf", PDF, 1929522, ""),
+            ("1EaIV8Au4NM3gmrIoKDI32CIUtEBfip_jMqtylKfOu58", "Marketing Requirements", DOC, 3046, ""),
+            ("1Q67Pn1Ej8er6MnKiHakc_cJ0ckEVW4y7", "2nd - Trimmed call.mp4", MP4, 98580388, ""),
+            ("1mu9q8AZhHDsi5kBooj-ZUg0d1uOYHtRisVOWb7ZG1Gk", "Notes & Requirements", DOC, 7119, ""),
+        ],
+    },
 }
 
 # Cards whose linked folder DOES contain subfolders, so discovery is not

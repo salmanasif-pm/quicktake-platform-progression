@@ -187,9 +187,17 @@ class TestDiagramRouting(unittest.TestCase):
         self.assertEqual(C.classify_file(f)[0:2], ("copy", "diagrams"))
 
     def test_slides_named_as_diagram_route_to_diagrams(self):
-        f = {"id": "s", "name": "Process Flow Deck", "mimeType": C.GOOGLE_SLIDES,
+        f = {"id": "s", "name": "System Architecture Diagram", "mimeType": C.GOOGLE_SLIDES,
              "size": "40000"}
         self.assertEqual(C.classify_file(f)[1], "diagrams")
+
+    def test_slides_kickoff_deck_is_not_a_diagram(self):
+        # Real card-122/206 file: a kickoff document, not a diagram deliverable.
+        for n in ("MoneyMate |  WorkFlow & Kickoff Document",
+                  "247CAD - WorkFlow & Kickoff Document",
+                  "TechDebt Management - Roadmap"):
+            f = {"id": n, "name": n, "mimeType": C.GOOGLE_SLIDES, "size": "500000"}
+            self.assertEqual(C.classify_file(f)[1], "sources", n)
 
     def test_plain_slides_stay_in_sources(self):
         f = {"id": "s", "name": "Client Proposal", "mimeType": C.GOOGLE_SLIDES,
