@@ -1,0 +1,441 @@
+{
+ "295": {
+  "card_folder": "295 - Riley Infinity - EdTech Software",
+  "card_url": "https://trello.com/c/bNEwAKFR/295-riley-infinity-edtech-software",
+  "list_name": "Done, (Waiting on Decision)",
+  "copies": [
+   {
+    "source_id": "1ATomNzck_qO5FDCDHJLSFZbeWM3oqzxFjwIDdR0d5fI",
+    "source_name": "Stephanie - Questions ",
+    "dest_name": "Stephanie - Questions",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1ApwyNijaeGWrojGie950oiK6QWlMVd5r05A8FKjEeU4",
+    "source_name": "Requirement",
+    "dest_name": "Requirement",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1h_JuEJC3lfnHn1p6GbSKnL0HOtYvksHU",
+    "source_name": "Copy of Campus Weekly Activity Report 2025.xlsx",
+    "dest_name": "Copy of Campus Weekly Activity Report 2025.xlsx",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1tpIPG5Ztwex5x6-TXmoGbqQMiHWxTnsPiw1GJtY-EQI",
+    "source_name": "Requirement doc for client",
+    "dest_name": "Requirement doc for client",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1fAulKSsAttuHnbGr8GfCza_C6TSA5IEh",
+    "source_name": "Educator Feedback Summary Pain points.docx",
+    "dest_name": "Educator Feedback Summary Pain points.docx",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1uTod_4vDTS3kQuj4dbSsmtsn3Fwjn_WXMsAotYWpi1o",
+    "source_name": "Feedback",
+    "dest_name": "Feedback",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1Xa7Guid24hRd5oj_I-zg9HPrODz3TZYY",
+    "source_name": "TitleTrack_Software_Spec_Phase5 Stephanie Krol.docx (1).pdf",
+    "dest_name": "TitleTrack_Software_Spec_Phase5 Stephanie Krol.docx (1).pdf",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1GSIAENrVW0j5Mv2ANv7Y10A53wIxej-R",
+    "source_name": "accreditation check off sheet.docx",
+    "dest_name": "accreditation check off sheet.docx",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1QamEVz3VdbiTNHQwhZVIJBUG6Z4ZvVoC",
+    "source_name": "Education Specialist OSE Report Checklist.docx",
+    "dest_name": "Education Specialist OSE Report Checklist.docx",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1L6enqI64O_trMKKNE-vIW9X3Ky7Tv-x0",
+    "source_name": "EduCommand AI Level 1 School Review Overview FINAL.pdf",
+    "dest_name": "EduCommand AI Level 1 School Review Overview FINAL.pdf",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1KTYMj3S_VeUvOwu3ZAp1r4x7GjtNUS5-",
+    "source_name": "EduCommand AI Level 2 Funding Proposal Brief FINAL.pdf",
+    "dest_name": "EduCommand AI Level 2 Funding Proposal Brief FINAL.pdf",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1QTeqOGi6uAtJm8_M86MIoJ06K6hi_fhn",
+    "source_name": "EduCommand AI Level 3 Beta Architecture Materials FINAL.pdf",
+    "dest_name": "EduCommand AI Level 3 Beta Architecture Materials FINAL.pdf",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1mrOWA8-D2TdQZRWOr2SZPFQfR0Lz2MebOKD7A38zq3s",
+    "source_name": "EduCommand AI | GoHighLevel-Based Institutional Command Platform - Roadmap & Estimate",
+    "dest_name": "EduCommand AI GoHighLevel-Based Institutional Command Platform - Roadmap & Estimate",
+    "dest": "sources"
+   }
+  ],
+  "skips": [
+   {
+    "name": "Solution Call.mp4",
+    "reason": "video",
+    "size": 284314759
+   },
+   {
+    "name": "Copy of Intro call.mp4",
+    "reason": "video",
+    "size": 254556717
+   },
+   {
+    "name": "Copy of Readme",
+    "reason": "empty stub (1024 bytes)",
+    "size": 1024
+   },
+   {
+    "name": "Copy of 19th Aug call.mp4",
+    "reason": "video",
+    "size": 285691309
+   },
+   {
+    "name": "19th Aug call.mp4",
+    "reason": "video",
+    "size": 285691309
+   },
+   {
+    "name": "Readme",
+    "reason": "empty stub (1024 bytes)",
+    "size": 1024
+   },
+   {
+    "name": "Intro call.mp4",
+    "reason": "video",
+    "size": 254556717
+   },
+   {
+    "name": "Copy of Requirement",
+    "reason": "duplicate of Requirement",
+    "size": 5706
+   },
+   {
+    "name": "Copy of Copy of Campus Weekly Activity Report 2025.xlsx",
+    "reason": "duplicate of Copy of Campus Weekly Activity Report 2025.xlsx",
+    "size": 15798
+   },
+   {
+    "name": "Copy of Requirement doc for client",
+    "reason": "duplicate of Requirement doc for client",
+    "size": 2129
+   },
+   {
+    "name": "Copy of Educator Feedback Summary Pain points.docx",
+    "reason": "duplicate of Educator Feedback Summary Pain points.docx",
+    "size": 37308
+   },
+   {
+    "name": "Copy of Feedback",
+    "reason": "duplicate of Feedback",
+    "size": 2272
+   },
+   {
+    "name": "Copy of TitleTrack_Software_Spec_Phase5 Stephanie Krol.docx (1).pdf",
+    "reason": "duplicate of TitleTrack_Software_Spec_Phase5 Stephanie Krol.docx (1).pdf",
+    "size": 195825
+   },
+   {
+    "name": "Copy of accreditation check off sheet.docx",
+    "reason": "duplicate of accreditation check off sheet.docx",
+    "size": 351762
+   },
+   {
+    "name": "Copy of Education Specialist OSE Report Checklist.docx",
+    "reason": "duplicate of Education Specialist OSE Report Checklist.docx",
+    "size": 395158
+   }
+  ],
+  "error": null,
+  "card_md": "# Riley Infinity - EdTech Software (#295)\n\n- **Card:** https://trello.com/c/bNEwAKFR/295-riley-infinity-edtech-software\n- **List:** Done, (Waiting on Decision)\n- **Status:** open, dueComplete=True, due=2026-05-01T12:35:00.000Z\n- **Last activity:** 2026-06-15T13:16:01.041Z\n- **Labels:** Faizan Azam\n\n## Description\n\nProspect wants to build a custom platform to replace CourseKey, CampusNexus, and Trajecsys. It\u2019s for for-profit schools and includes compliance tracking, student risk scores, AI-generated reports, and GoHighLevel (GHL) integration.\n\nWhat We Need to Do:\n\n1. **Review the attached doc**; full spec is there (phases, features, tech stack).\n2. **Break down by phase**:\n   - Time estimates for: frontend, backend, DevOps, QA, PM.\n3. **Recommend backend**; choose between **FastAPI (Python)** or **NestJS (Node.js)**.\n4. **Review GHL integration** \u2013 Should we build it into the platform or keep it separate?\n\nCan we prepare:\n\n1 - Roadmap.\n2- Architecture Diagram\n3- Flow Diagram.\n\nGoogle drive: [https://drive.google.com/drive/folders/1UX9a6irjn_Iv6347OoukophBnd6VbzPS](https://drive.google.com/drive/folders/1UX9a6irjn_Iv6347OoukophBnd6VbzPS \"\u200c\")\n\nClient Document: [https://drive.google.com/file/d/1Xa7Guid24hRd5oj_I-zg9HPrODz3TZYY/view?usp=sharing](https://drive.google.com/file/d/1Xa7Guid24hRd5oj_I-zg9HPrODz3TZYY/view?usp=sharing \"smartCard-inline\")\n\nIf you need anything do let me know.\n\n## Linked URLs found in description/attachments\n\n- https://drive.google.com/drive/folders/1UX9a6irjn_Iv6347OoukophBnd6VbzPS\n- https://drive.google.com/file/d/1Xa7Guid24hRd5oj_I-zg9HPrODz3TZYY/view?usp=sharing\n\n## Files copied\n\n- Stephanie - Questions -> \n- Requirement -> \n- Copy of Campus Weekly Activity Report 2025.xlsx -> \n- Requirement doc for client -> \n- Educator Feedback Summary Pain points.docx -> \n- Feedback -> \n- TitleTrack_Software_Spec_Phase5 Stephanie Krol.docx (1).pdf -> \n- accreditation check off sheet.docx -> \n- Education Specialist OSE Report Checklist.docx -> \n- EduCommand AI Level 1 School Review Overview FINAL.pdf -> \n- EduCommand AI Level 2 Funding Proposal Brief FINAL.pdf -> \n- EduCommand AI Level 3 Beta Architecture Materials FINAL.pdf -> \n- EduCommand AI GoHighLevel-Based Institutional Command Platform - Roadmap & Estimate -> \n\n## Files skipped\n\n- Solution Call.mp4 - video (271.14 MB)\n- Copy of Intro call.mp4 - video (242.76 MB)\n- Copy of Readme - empty stub (1024 bytes) (0.00 MB)\n- Copy of 19th Aug call.mp4 - video (272.46 MB)\n- 19th Aug call.mp4 - video (272.46 MB)\n- Readme - empty stub (1024 bytes) (0.00 MB)\n- Intro call.mp4 - video (242.76 MB)\n- Copy of Requirement - duplicate of Requirement (0.01 MB)\n- Copy of Copy of Campus Weekly Activity Report 2025.xlsx - duplicate of Copy of Campus Weekly Activity Report 2025.xlsx (0.02 MB)\n- Copy of Requirement doc for client - duplicate of Requirement doc for client (0.00 MB)\n- Copy of Educator Feedback Summary Pain points.docx - duplicate of Educator Feedback Summary Pain points.docx (0.04 MB)\n- Copy of Feedback - duplicate of Feedback (0.00 MB)\n- Copy of TitleTrack_Software_Spec_Phase5 Stephanie Krol.docx (1).pdf - duplicate of TitleTrack_Software_Spec_Phase5 Stephanie Krol.docx (1).pdf (0.19 MB)\n- Copy of accreditation check off sheet.docx - duplicate of accreditation check off sheet.docx (0.34 MB)\n- Copy of Education Specialist OSE Report Checklist.docx - duplicate of Education Specialist OSE Report Checklist.docx (0.38 MB)\n"
+ },
+ "448": {
+  "card_folder": "448 - Chart Consolidation - AllysonRuth",
+  "card_url": "https://trello.com/c/o2wRYMnm/448-chart-consolidation-allyson-ruth",
+  "list_name": "Done, (Waiting on Decision)",
+  "copies": [
+   {
+    "source_id": "1dIRo2QNMQHQeWdBjmc6D5CUGpRQeGwH0BUPBE9nO2Xw",
+    "source_name": "Questions and Answers - May 14, 2026",
+    "dest_name": "Questions and Answers - May 14, 2026",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1FosLAdGaQL2X2ZrKBt3PF09qO43iXIG50HdyCsGSVG8",
+    "source_name": "Care Plans for Life | Roadmap & Estimations",
+    "dest_name": "Care Plans for Life Roadmap & Estimations",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1Nwmp_ZjwvX5m4pljtd1C5Yt_tIXO2_kV",
+    "source_name": "Care_Plans_for_Life_BA_Scope_Estimate_Workbook.xlsm",
+    "dest_name": "Care_Plans_for_Life_BA_Scope_Estimate_Workbook.xlsm",
+    "dest": "sources"
+   }
+  ],
+  "skips": [
+   {
+    "name": "Meeting Recording",
+    "reason": "empty stub (1024 bytes)",
+    "size": 1024
+   }
+  ],
+  "error": null,
+  "card_md": "# Chart Consolidation - Allyson/Ruth (#448)\n\n- **Card:** https://trello.com/c/o2wRYMnm/448-chart-consolidation-allyson-ruth\n- **List:** Done, (Waiting on Decision)\n- **Status:** open, dueComplete=True, due=2026-05-14T12:35:00.000Z\n- **Last activity:** 2026-05-18T19:59:34.959Z\n- **Labels:** none\n\n## Description\n\n**Description:**\n\n**Phase 1: Medical chart summarization**\n\n- Ingest large PDF medical records (digital, primarily Epic/MyChart format)\n- Extract relevant fields only: surgeries, hospital stays, blood transfusions, PT/OT visits, procedures, dates, provider names\n- Output structured summaries in client's specific language and format\n- Rewrite records from first-person clinical notes to third-person summaries\n- Summary length scales with record volume, not a fixed page count\n- Human review/approval step before final output is generated\n- OCR component (TBD) for handwritten notes via AWS Textract, quote with and without\n- Pull pricing data from existing client data sheets\n- Integrate pricing output directly into the summarization system\n\n**Technical requirements:**\n\n- HIPAA compliant\n- Closed AI system (no data leakage to public models)\n- Hallucination safeguards\n- PDF ingestion via Dropbox/ShareFile\n- Trained on client-provided de-identified sample summaries (15 to 30 examples pending)\n\n  Engineering: [https://drive.google.com/drive/folders/1dQJ15sNEltdW-LH-casuKG7ltchqrw5G?usp=sharing](https://drive.google.com/drive/folders/1dQJ15sNEltdW-LH-casuKG7ltchqrw5G?usp=sharing \"\u200c\")\n\n## Linked URLs found in description/attachments\n\n- https://drive.google.com/drive/folders/1dQJ15sNEltdW-LH-casuKG7ltchqrw5G?usp=sharing\n\n## Files copied\n\n- Questions and Answers - May 14, 2026 -> \n- Care Plans for Life Roadmap & Estimations -> \n- Care_Plans_for_Life_BA_Scope_Estimate_Workbook.xlsm -> \n\n## Files skipped\n\n- Meeting Recording - empty stub (1024 bytes) (0.00 MB)\n"
+ },
+ "452": {
+  "card_folder": "452 - Seaver Construction - Procore-like Construction Platform",
+  "card_url": "https://trello.com/c/4iJoEYgb/452-seaver-construction-procore-like-construction-platform",
+  "list_name": "Done, (Waiting on Decision)",
+  "copies": [
+   {
+    "source_id": "1Buv8FvAl4Lu9qLl4e2PnejRHABArX36lYAS3fHC9I8U",
+    "source_name": "Procore Lite Custom Version - Roadmap & Estimations",
+    "dest_name": "Procore Lite Custom Version - Roadmap & Estimations",
+    "dest": "sources"
+   }
+  ],
+  "skips": [
+   {
+    "name": "Kyle __ PureLogics - May 22 2026 (2).mp4",
+    "reason": "video",
+    "size": 166883797
+   }
+  ],
+  "error": null,
+  "card_md": "# Seaver Construction - Procore-like Construction Platform (#452)\n\n- **Card:** https://trello.com/c/4iJoEYgb/452-seaver-construction-procore-like-construction-platform\n- **List:** Done, (Waiting on Decision)\n- **Status:** open, dueComplete=True, due=2026-06-03T20:52:00.000Z\n- **Last activity:** 2026-06-09T15:16:41.329Z\n- **Labels:** none\n\n## Description\n\n**Background**\n\nSeaver Construction currently uses Procore but only utilizes 4 to 5 of its features. The cost scales with project volume, which is becoming unsustainable as they manage 30 to 40 projects but are only inputting about 10 due to cost. They want to own a custom-built alternative so they stop paying recurring licensing fees entirely.\n\n---\n\n**Required Features (MVP)**\n\n1. Submittals\n2. RFIs\n3. Shop Drawings\n4. Daily Reports\n5. Specifications Storage\n\n**Future Phase (not in scope now)**\n\n- Cost reporting module (flagged for a later engagement)\n\n---\n\n**Technical Requirements**\n\n- Web plus mobile access via PWA (React preferred, no native app)\n- Customizable user permission system (checkbox-based role builder, no pre-built profiles)\n- Smart/controlled notifications (user selects what they receive)\n- Must support 30 to 40 concurrent projects and multiple business verticals\n\n---\n\n**Access for Discovery**\n\nKyle will provide a Seaver Construction email address and password to use as a Procore login. Use this account only inside their sandbox project to avoid triggering any third-party developer flags. Do not use a PureLogics email address.\n\nEngineering: [https://drive.google.com/drive/u/0/folders/11zbFhO5DOk3rjxY4EBbOB_oH4vBiQcwc](https://drive.google.com/drive/u/0/folders/11zbFhO5DOk3rjxY4EBbOB_oH4vBiQcwc \"\u200c\")\n\n## Linked URLs found in description/attachments\n\n- https://drive.google.com/drive/u/0/folders/11zbFhO5DOk3rjxY4EBbOB_oH4vBiQcwc\n\n## Files copied\n\n- Procore Lite Custom Version - Roadmap & Estimations -> \n\n## Files skipped\n\n- Kyle __ PureLogics - May 22 2026 (2).mp4 - video (159.15 MB)\n"
+ },
+ "447": {
+  "card_folder": "447 - GreatKids - Mobile App",
+  "card_url": "https://trello.com/c/1BaDxvzx/447-greatkids-mobile-app",
+  "list_name": "Done, (Waiting on Decision)",
+  "copies": [
+   {
+    "source_id": "1cCESJeMyG_AexRdUmTVh07B-vpKf09G9y8Bv3Q92Ils",
+    "source_name": "Great Kids Mobile App | Roadmap & Estimations",
+    "dest_name": "Great Kids Mobile App Roadmap & Estimations",
+    "dest": "sources"
+   }
+  ],
+  "skips": [
+   {
+    "name": "Copy of Great Kids, Inc. __ PureLogics - Apr 27 2026.mp4",
+    "reason": "video",
+    "size": 241990930
+   }
+  ],
+  "error": null,
+  "card_md": "# GreatKids - Mobile App (#447)\n\n- **Card:** https://trello.com/c/1BaDxvzx/447-greatkids-mobile-app\n- **List:** Done, (Waiting on Decision)\n- **Status:** open, dueComplete=True, due=2026-05-05T18:07:00.000Z\n- **Last activity:** 2026-06-09T15:39:20.362Z\n- **Labels:** Imran Sadiq\n\n## Description\n\n\u200c\n\n---\n\n**Great Kids, Inc. \u2014 MVP App Discovery**\n\n**Contact:** Jennifer Hayes, Director of Product **Org:** Great Kids, Inc. ([greatkidsinc.net](http://greatkidsinc.net \"\u200c\")) \u2014 Nonprofit, 25+ years in parenting education **Referred by:** Dana Broadway via Eddie\n\n---\n\n**Project Overview** Great Kids wants to digitize their existing parenting education curriculum (17 manuals across 5 sets) into a mobile app. They are transitioning from print-heavy delivery to digital and have no in-house development capability.\n\n---\n\n**MVP Scope**\n\n_Parent Side_\n\n- Login with child profile (supports multiple children/ages)\n- Age & stage content (activities, milestones, parenting skills)\n- Push notifications from professionals\n- Chatbot to query curriculum content\n\n_Professional/Caregiver Side_\n\n- Browse curriculum by developmental domain and age group\n- Search across all content\n- Send one-way push notifications to parents\n- Chatbot for quick content access during family visits\n\n_Platform/Backend_\n\n- TalentLMS integration\n- License-based subscription model (1-year and 3-year contracts)\n- B2B onboarding \u2014 agencies (e.g. Head Start) purchase licenses and enroll families\n- Data access for Great Kids for research/outcomes (anonymized)\n  Engineering: [https://drive.google.com/drive/folders/1PbqZA5RrXIOHn2Qc93gYlODWm-4mCAAQ?usp=sharing](https://drive.google.com/drive/folders/1PbqZA5RrXIOHn2Qc93gYlODWm-4mCAAQ?usp=sharing \"\u200c\")\n\n## Linked URLs found in description/attachments\n\n- http://greatkidsinc.net\n- https://drive.google.com/drive/folders/1PbqZA5RrXIOHn2Qc93gYlODWm-4mCAAQ?usp=sharing\n\n## Files copied\n\n- Great Kids Mobile App Roadmap & Estimations -> \n\n## Files skipped\n\n- Copy of Great Kids, Inc. __ PureLogics - Apr 27 2026.mp4 - video (230.78 MB)\n"
+ },
+ "442": {
+  "card_folder": "442 - Brightstead AI Agents",
+  "card_url": "https://trello.com/c/C3uvRyW0/442-brightstead-ai-agents",
+  "list_name": "Done, (Waiting on Decision)",
+  "copies": [
+   {
+    "source_id": "1JqP5jPF6jnIIb31Ykm2rn1UzK6OCIlgz6kYIgGcjXKQ",
+    "source_name": "Brightstead AI Agents - Roadmap & Estimate",
+    "dest_name": "Brightstead AI Agents - Roadmap & Estimate",
+    "dest": "sources"
+   },
+   {
+    "source_id": "17x_1pBcpFDLA_drx-kpv5dFLSxtvd8YYRQDbQlz5lvc",
+    "source_name": "Copy of ORG BRSTD AI Army- Roadmap and estimates",
+    "dest_name": "Copy of ORG BRSTD AI Army- Roadmap and estimates",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1HsHMcVPLG7dwpC-o2p_TRtlApYQR05Z1",
+    "source_name": "BRSTD Agent Army Build.docx",
+    "dest_name": "BRSTD Agent Army Build.docx",
+    "dest": "sources"
+   },
+   {
+    "source_id": "16VfinxB9M31oli7t30PR1MlFsW7WSkoFMqeawreOFUo",
+    "source_name": "GrantAI Production readiness - Engineering Findings",
+    "dest_name": "GrantAI Production readiness - Engineering Findings",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1SkRu7MyEOuiDRpAPiqWVMAcQFtpz7eZZ",
+    "source_name": "Brightstead_Phase2_L2_Qualification_Outreach_Roadmap.xlsx",
+    "dest_name": "Brightstead_Phase2_L2_Qualification_Outreach_Roadmap.xlsx",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1r6ND44nOGaZ4ihXIvdZLwEcYo5ON7xfu",
+    "source_name": "Brightstead_Technologies_Phase_2_Jira_Tickets.pdf",
+    "dest_name": "Brightstead_Technologies_Phase_2_Jira_Tickets.pdf",
+    "dest": "sources"
+   }
+  ],
+  "skips": [
+   {
+    "name": "Prekickoff - Brightstead Tech.mp4",
+    "reason": "video",
+    "size": 88416974
+   }
+  ],
+  "error": null,
+  "card_md": "# Brightstead AI Agents (#442)\n\n- **Card:** https://trello.com/c/C3uvRyW0/442-brightstead-ai-agents\n- **List:** Done, (Waiting on Decision)\n- **Status:** open, dueComplete=True, due=2026-05-04T16:00:00.000Z\n- **Last activity:** 2026-05-13T20:29:30.549Z\n- **Labels:** Faizan Azam\n\n## Description\n\n**Description:** Please prepare estimates for the following two items for Sam Sells' account. Sam is expecting funding mid-May and wants to move fast once it lands, so we need these ready to send ASAP.\n\n1. **Phase 1 Completion** Estimate the remaining work to complete the Brightstead lead generation platform. Please coordinate with Mohsin as he was the PM on this and will have context on what's left.\n\n1. **AI Sales Army** Estimate the work for the AI agent sales army that was scoped previously. Please pull any notes or prior scope from that discussion.\n\n**Important:** Sam explicitly said he does not want a 6-week timeline for Phase 1. please see if we can present a 2-3 week option for each phase. Include hours, team composition, and cost breakdown in both estimates. He wants us to use Claude Code to reduce the estimate\n\nDrive:[https://drive.google.com/drive/folders/13MGh1EZtDHs2rpHJG-7Xt79DoC_32tKj?usp=sharing](https://drive.google.com/drive/folders/13MGh1EZtDHs2rpHJG-7Xt79DoC_32tKj?usp=sharing \"smartCard-inline\")\n\n## Linked URLs found in description/attachments\n\n- https://drive.google.com/drive/folders/13MGh1EZtDHs2rpHJG-7Xt79DoC_32tKj?usp=sharing\n\n## Files copied\n\n- Brightstead AI Agents - Roadmap & Estimate -> \n- Copy of ORG BRSTD AI Army- Roadmap and estimates -> \n- BRSTD Agent Army Build.docx -> \n- GrantAI Production readiness - Engineering Findings -> \n- Brightstead_Phase2_L2_Qualification_Outreach_Roadmap.xlsx -> \n- Brightstead_Technologies_Phase_2_Jira_Tickets.pdf -> \n\n## Files skipped\n\n- Prekickoff - Brightstead Tech.mp4 - video (84.32 MB)\n"
+ },
+ "119": {
+  "card_folder": "119 - Luymn Cross-border financial application",
+  "card_url": "https://trello.com/c/Xum5XorF/119-luymn-cross-border-financial-application",
+  "list_name": "Done, (Waiting on Decision)",
+  "copies": [
+   {
+    "source_id": "1YbP2o0yzGV0ClMbBV3fyl1GcTskPrsioklfh7DS9tL8",
+    "source_name": "Questions to ask the bank / local partners ",
+    "dest_name": "Questions to ask the bank local partners",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1a34hgBk876jTtLbQEKByKRMIWe0_OMpqmwyTBLMBeFQ",
+    "source_name": "Lumyn <> PureLogics - Feedback Discussion - March 30",
+    "dest_name": "Lumyn PureLogics - Feedback Discussion - March 30",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1AzSVaWCTNyHyBHULpZZA22THJCV9XDWu",
+    "source_name": "RainCheck Overview.pdf",
+    "dest_name": "RainCheck Overview.pdf",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1FDvrDHIA-VgyXcrQ5NauQsPpZy6kX4Ft",
+    "source_name": "FOR SOHAIB-3.5.2026.pdf",
+    "dest_name": "FOR SOHAIB-3.5.2026.pdf",
+    "dest": "sources"
+   },
+   {
+    "source_id": "18HT5WNO0lmgPiyiZ0KFLk8HMfaU8u4kZ",
+    "source_name": "Lumyn - USA-Ghana Remittance & Stability Layer 02102026.pdf",
+    "dest_name": "Lumyn - USA-Ghana Remittance & Stability Layer 02102026.pdf",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1p8p0cdgBplemhl0i9fxobRShbATkE7MUZZKtd2BuomU",
+    "source_name": "Notes & Understanding",
+    "dest_name": "Notes & Understanding",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1FRwMUBvlokGDeig64w-pnn5M0Dj1Bg26HqmITkypFF0",
+    "source_name": "FOR SOHAIB-3.5.2026",
+    "dest_name": "FOR SOHAIB-3.5.2026",
+    "dest": "sources"
+   }
+  ],
+  "skips": [
+   {
+    "name": "video1015049405",
+    "reason": "video",
+    "size": 258215281
+   },
+   {
+    "name": "Lumyn __ PureLogics - Feedback Discussion  - Mar 30 2026.mp4",
+    "reason": "video",
+    "size": 291215394
+   },
+   {
+    "name": "video1015049405.mp4",
+    "reason": "video",
+    "size": 258214712
+   },
+   {
+    "name": "welcome-hub-main.zip",
+    "reason": "archive",
+    "size": 449831
+   },
+   {
+    "name": "Lumyn __ PureLogics - Feedback Discussion  - Mar 30 2026.mp4",
+    "reason": "video",
+    "size": 291215394
+   }
+  ],
+  "error": null,
+  "card_md": "# Luymn <> Cross-border financial application (#119)\n\n- **Card:** https://trello.com/c/Xum5XorF/119-luymn-cross-border-financial-application\n- **List:** Done, (Waiting on Decision)\n- **Status:** open, dueComplete=True, due=2026-03-18T14:02:00.000Z\n- **Last activity:** 2026-06-09T15:18:24.434Z\n- **Labels:** High Priority, Salman Asif\n\n## Description\n\nThey want to build a cross-border financial application that enables users to send money to Ghana and other countries securely and efficiently. The platform should function as a remittance solution with transparent fees, real-time transfers, and wallet-based receiving options. A key differentiator is the ability for senders to automatically allocate a portion of each transfer into a dedicated savings balance for the recipient. This savings feature could support fixed amounts, percentage-based rules, or goal-oriented savings to encourage financial stability. Overall, the vision is to combine money transfer and structured saving into one seamless digital experience.\n\n\nGoogle drive: [https://drive.google.com/drive/folders/1sBBnl4pOUTjCZvFb0jHYzoxW-8CGCdCQ](https://drive.google.com/drive/folders/1sBBnl4pOUTjCZvFb0jHYzoxW-8CGCdCQ \"smartCard-inline\")\n\nNotes: [https://docs.google.com/document/d/1p8p0cdgBplemhl0i9fxobRShbATkE7MUZZKtd2BuomU/edit?tab=t.0#heading=h.eity5tdlrfut](https://docs.google.com/document/d/1p8p0cdgBplemhl0i9fxobRShbATkE7MUZZKtd2BuomU/edit?tab=t.0#heading=h.eity5tdlrfut \"smartCard-inline\")\n\n\nDocument from client: [https://docs.google.com/document/d/1FRwMUBvlokGDeig64w-pnn5M0Dj1Bg26HqmITkypFF0/edit?tab=t.0#heading=h.1sm4k7retdd0](https://docs.google.com/document/d/1FRwMUBvlokGDeig64w-pnn5M0Dj1Bg26HqmITkypFF0/edit?tab=t.0#heading=h.1sm4k7retdd0 \"smartCard-inline\")\n\n## Linked URLs found in description/attachments\n\n- https://drive.google.com/drive/folders/1sBBnl4pOUTjCZvFb0jHYzoxW-8CGCdCQ\n- https://docs.google.com/document/d/1p8p0cdgBplemhl0i9fxobRShbATkE7MUZZKtd2BuomU/edit?tab=t.0#heading=h.eity5tdlrfut\n- https://docs.google.com/document/d/1FRwMUBvlokGDeig64w-pnn5M0Dj1Bg26HqmITkypFF0/edit?tab=t.0#heading=h.1sm4k7retdd0\n\n## Files copied\n\n- Questions to ask the bank local partners -> \n- Lumyn PureLogics - Feedback Discussion - March 30 -> \n- RainCheck Overview.pdf -> \n- FOR SOHAIB-3.5.2026.pdf -> \n- Lumyn - USA-Ghana Remittance & Stability Layer 02102026.pdf -> \n- Notes & Understanding -> \n- FOR SOHAIB-3.5.2026 -> \n\n## Files skipped\n\n- video1015049405 - video (246.25 MB)\n- Lumyn __ PureLogics - Feedback Discussion  - Mar 30 2026.mp4 - video (277.72 MB)\n- video1015049405.mp4 - video (246.25 MB)\n- welcome-hub-main.zip - archive (0.43 MB)\n- Lumyn __ PureLogics - Feedback Discussion  - Mar 30 2026.mp4 - video (277.72 MB)\n"
+ },
+ "436": {
+  "card_folder": "436 - KinneyMunro - Onboarding Platform",
+  "card_url": "https://trello.com/c/miMQKCBQ/436-kinneymunro-onboarding-platform",
+  "list_name": "Done, (Waiting on Decision)",
+  "copies": [
+   {
+    "source_id": "13ewOD14sz1K3Y2tOMKuxOWBBJYbmJ7xsrLU-Ho5pRvg",
+    "source_name": "Brian Kinney <> PureLogics - March 26",
+    "dest_name": "Brian Kinney PureLogics - March 26",
+    "dest": "sources"
+   }
+  ],
+  "skips": [
+   {
+    "name": "Copy of Brian Kinney __ PureLogics - Mar 26 2026.mp4",
+    "reason": "video",
+    "size": 279928722
+   }
+  ],
+  "error": null,
+  "card_md": "# KinneyMunro - Onboarding Platform (#436)\n\n- **Card:** https://trello.com/c/miMQKCBQ/436-kinneymunro-onboarding-platform\n- **List:** Done, (Waiting on Decision)\n- **Status:** open, dueComplete=True, due=2026-04-14T14:00:00.000Z\n- **Last activity:** 2026-04-23T12:57:42.307Z\n- **Labels:** Salman Asif\n\n## Description\n\nClient: Brian Kinney \u2014 KinneyMunro Wealth Advisors\n\nKinneyMunro is a boutique RIA (Registered Investment Advisor) firm managing ~50 households (~100 clients) of mostly high net worth individuals. The firm is a small team and is actively looking to scale beyond 100 clients. They use Fidelity and Schwab as custodians, Practifi as their CRM, and Vanilla for estate planning.\n\n**Pain Point**\nTheir client onboarding process is entirely manual and email-driven. It has two friction points \u2014 first, collecting financial documents from prospects before analysis, and second, the actual onboarding where clients receive multiple rounds of DocuSign from both the custodian and the firm with little context or status updates. As they scale beyond their current network, this process will hurt client experience and become unmanageable.\n\n**Proposed Solution**\nA lightweight custom onboarding platform that collects client financial information upfront, reuses that data to pre-populate onboarding forms, automates document requests, and keeps clients updated on their onboarding status throughout the process. Follow-up call scheduled for Apr 1 at 1PM ET to present an ROI-based estimate.\n\nEngineering: [https://drive.google.com/drive/folders/1M1RAb6C2eRod3zLG4FQuZADulHHlMGF_?usp=sharing](https://drive.google.com/drive/folders/1M1RAb6C2eRod3zLG4FQuZADulHHlMGF_?usp=sharing \"\u200c\")\n\n## Linked URLs found in description/attachments\n\n- https://drive.google.com/drive/folders/1M1RAb6C2eRod3zLG4FQuZADulHHlMGF_?usp=sharing\n\n## Files copied\n\n- Brian Kinney PureLogics - March 26 -> \n\n## Files skipped\n\n- Copy of Brian Kinney __ PureLogics - Mar 26 2026.mp4 - video (266.96 MB)\n"
+ },
+ "116": {
+  "card_folder": "116 - Keebeck - Unified Client Portal",
+  "card_url": "https://trello.com/c/lzroYrvS/116-keebeck-unified-client-portal",
+  "list_name": "Done, (Waiting on Decision)",
+  "copies": [
+   {
+    "source_id": "1XMFVapsM-H0ddd6IwtW_ECezm3077o61",
+    "source_name": "PureLogics Mail - Fwd_ Keebeck _ PureLogics follow up.pdf",
+    "dest_name": "PureLogics Mail - Fwd_ Keebeck _ PureLogics follow up.pdf",
+    "dest": "sources"
+   },
+   {
+    "source_id": "1xQC51Fd9ZDx8S8CsCMt-rWBh2w5YuazFqB1Sx67ZfBM",
+    "source_name": "Keebeck Unified Client Portal - Platform Access Questions",
+    "dest_name": "Keebeck Unified Client Portal - Platform Access Questions",
+    "dest": "sources"
+   }
+  ],
+  "skips": [
+   {
+    "name": "Deliverables",
+    "reason": "empty stub (1024 bytes)",
+    "size": 1024
+   },
+   {
+    "name": "Engineering - Keebeck.mp4",
+    "reason": "video",
+    "size": 556697822
+   }
+  ],
+  "error": null,
+  "card_md": "# Keebeck - Unified Client Portal (#116)\n\n- **Card:** https://trello.com/c/lzroYrvS/116-keebeck-unified-client-portal\n- **List:** Done, (Waiting on Decision)\n- **Status:** open, dueComplete=True, due=2026-06-08T15:00:00.000Z\n- **Last activity:** 2026-06-15T13:16:08.695Z\n- **Labels:** none\n\n## Description\n\nKeebeck is a wealth management firm serving ultra-high-net-worth clients struggling with a fragmented tech stack. Clients must log into multiple platforms,  Moxo (communication), Tamarack (portfolio reporting), and Arch (alternative investments), creating a disjointed experience.\n\nThe ask is a custom client portal that unifies all three into a single login. Tamarack can expose data via API but won't ingest external data, so a separate interface layer is the approach. Tamarack and Addepar are contractually locked in for 5 years, so replacement is off the table.\n\nEngineering: [https://drive.google.com/drive/folders/1ZP1_6Rhnbd40CSrWGy7z2OEousTNAY6H?usp=sharing](https://drive.google.com/drive/folders/1ZP1_6Rhnbd40CSrWGy7z2OEousTNAY6H?usp=sharing \"smartCard-inline\")\n\n## Linked URLs found in description/attachments\n\n- https://drive.google.com/drive/folders/1ZP1_6Rhnbd40CSrWGy7z2OEousTNAY6H?usp=sharing\n\n## Files copied\n\n- PureLogics Mail - Fwd_ Keebeck _ PureLogics follow up.pdf -> \n- Keebeck Unified Client Portal - Platform Access Questions -> \n\n## Files skipped\n\n- Deliverables - empty stub (1024 bytes) (0.00 MB)\n- Engineering - Keebeck.mp4 - video (530.91 MB)\n"
+ },
+ "458": {
+  "card_folder": "458 - (M) Shoreline Credit Union - AI Assisted Loan Ops",
+  "card_url": "https://trello.com/c/YF2hs9mk/458-m-shoreline-credit-union-ai-assisted-loan-ops",
+  "list_name": "Done, (Waiting on Decision)",
+  "copies": [],
+  "skips": [],
+  "error": [
+   "folder:1Z7cT9Gkc9xjcR546q7NXGallISTAnHb2",
+   "Requested entity was not found (deleted or access revoked)"
+  ],
+  "card_md": "# (M) Shoreline Credit Union - AI Assisted Loan Ops (#458)\n\n- **Card:** https://trello.com/c/YF2hs9mk/458-m-shoreline-credit-union-ai-assisted-loan-ops\n- **List:** Done, (Waiting on Decision)\n- **Status:** open, dueComplete=False, due=2026-08-20T19:57:00.000Z\n- **Last activity:** 2026-08-28T20:01:24.961Z\n- **Labels:** none\n\n## Description\n\n## Shoreline Credit Union \u2013 Technical Planning\n\nTauqeer was on the technical scoping call with Shoreline Credit Union on August 17 and gathered/validated the requirements directly with the client.\n\n### What we need\n\nPlease coordinate with **Tauqeer** and prepare the following:\n\n1. **Internal Roadmap**\n   - Create a phased technical roadmap based on the requirements gathered by Tauqeer.\n   - This is primarily for internal planning and estimation.\n   - Clearly separate the initial POC from future/production phases.\n2. **Client-Facing User Flow Diagram**\n   - Create a simple user flow showing how the proposed solution would work from the user's perspective.\n   - Tauqeer should be able to walk the client through this on the next call.\n   - Keep this business-friendly and avoid unnecessary technical detail.\n3. **Architecture Diagram**\n   - Create a technical architecture showing the proposed components, document processing/AI layer, data flow, integrations, security considerations, and human review points.\n   - This is mainly for internal use but should be presentable if Shoreline brings a technical stakeholder onto the next call.\n\n### Brief Solution Overview\n\nShoreline wants to explore an **AI-powered document review and workflow solution for its credit union operations**.\n\nThe primary use case is **loan file review**. Today, an employee manually reviews roughly **50\u201360 consumer loan packets per month**, with vehicle loans being the main focus. The solution should analyze PDF loan packets for missing documents/pages, unchecked boxes, signatures, initials, dates, incorrect or inconsistent information, and other checklist/policy issues.\n\nThere is also a **DTI validation use case**, where the system should pull relevant debts from the credit report and compare them against standardized income information to identify calculation errors or threshold issues.\n\nFindings should be presented to a human reviewer with the relevant document/page/field and then routed back to the **loan officer** for correction. Final loan acceptance, policy exceptions, and credit decisions remain human-controlled.\n\nA secondary use case is **Accounts Payable automation**, covering approximately **100\u2013150 invoices/month**. The system would extract invoice information, validate it, flag duplicates/errors, suggest coding, and route invoices for approval.\n\nTheir core/accounting platform is **Jack Henry Symitar**, with API integrations potentially required.\n\nShoreline is currently evaluating **build vs. buy**, so the immediate goal is to give them a clear picture of what a PureLogics-built solution would look like and how we would approach the POC.\n\nEngineering: [https://drive.google.com/drive/folders/1Z7cT9Gkc9xjcR546q7NXGallISTAnHb2?usp=drive_link](https://drive.google.com/drive/folders/1Z7cT9Gkc9xjcR546q7NXGallISTAnHb2?usp=drive_link \"smartCard-inline\")\n\n## Linked URLs found in description/attachments\n\n- https://drive.google.com/drive/folders/1Z7cT9Gkc9xjcR546q7NXGallISTAnHb2?usp=drive_link\n\n## Files copied\n\n_(none)_\n\n## Files skipped\n\n_(none)_\n"
+ }
+}
