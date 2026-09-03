@@ -8,7 +8,10 @@ afterwards from three recorded inputs:
 
   data/<batch>_inventory.py     what was in the source folders
   data/<batch>_dest_folders.json  where each card's subfolders live
-  data/<batch>_copy_ids.json    dest folder id -> {copied title: file id}
+  data/<batch>_copy_ids.json    where each copy landed, either
+                                {"by_source": {source id: file id}} (preferred:
+                                unambiguous when two copies share a title) or
+                                {dest folder id: {copied title: file id}}
 
 It re-runs the shipped classifier over the inventory (so the manifest reflects
 the same decisions the script would make), matches each planned copy to the
@@ -71,6 +74,10 @@ def main():
         dest = json.load(fh)["cards"]
     with open(os.path.join(DATA, "%s_copy_ids.json" % args.batch)) as fh:
         copy_ids = json.load(fh)
+    # Source-id keyed is preferred; a title-keyed map cannot represent two
+    # copies that share a name (card 41 has two `Updated MacOS Plugins.xlsx`).
+    by_source = copy_ids.get("by_source", {})
+    renamed = copy_ids.get("renamed", {})
 
     cards = {c["id_short"]: c for c in
              load_snapshot(os.path.join(DATA, "trello_snapshot.json"))}
@@ -95,19 +102,23 @@ def main():
         for c in copies:
             folder = folders.get("diagrams" if c["dest"] == "diagrams"
                                  else "sources")
-            landed = copy_ids.get(folder, {}).get(c["dest_name"])
+            landed = (by_source.get(c["source_id"])
+                      or copy_ids.get(folder, {}).get(c["dest_name"]))
             if not landed:
                 unmatched.append((cid, c["dest_name"]))
                 continue
             url = view_url(landed, mime_of[c["source_id"]])
+            landed_name = renamed.get(c["source_id"], c["dest_name"])
             results[c["source_id"]] = landed
-            copied_md.append((c["dest_name"], url))
+            copied_md.append((landed_name, url))
             added.append({
                 "list_name": card["list_name"], "card_idshort": cid,
                 "card_name": card["name"], "card_url": card["url"],
                 "dest_folder_id": folder, "source_file_id": c["source_id"],
                 "source_file_name": c["source_name"], "copied_file_id": landed,
-                "copied_file_url": url, "status": "copied", "skip_reason": "",
+                "skip_reason": ("renamed to %s for uniqueness" % landed_name
+                                if c["source_id"] in renamed else ""),
+                "copied_file_url": url, "status": "copied",
                 "timestamp": now_iso(),
             })
 

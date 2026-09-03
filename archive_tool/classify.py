@@ -48,6 +48,7 @@ DIAGRAM_KEYWORDS = (
     "diagram", "workflow", "work flow", "user flow", "userflow",
     "system map", "systemmap", "architecture", "process flow", "data flow",
     "dataflow", "integration", "wireframe", "gantt", "flow",
+    "schema", "mind map", "mindmap",
 )
 
 # `architecture` and `integration` are ordinary words in document titles
@@ -56,7 +57,12 @@ DIAGRAM_KEYWORDS = (
 # raster/vector image they still are: a PNG called `Architecture.png` is a
 # diagram. Paged formats therefore need one of the strong signals below, or a
 # diagram-ish containing folder.
-WEAK_DIAGRAM_KEYWORDS = ("architecture", "integration")
+# Only strong enough on images. On a paged document these are ordinary words in
+# a title: "... Beta Architecture Materials FINAL.pdf" is a document, and
+# "Database Schema Specification.pdf" is a spec - but a PNG called
+# "Database Schema as of 19 August 2026" is an ER diagram.
+WEAK_DIAGRAM_KEYWORDS = ("architecture", "integration", "schema", "mind map",
+                         "mindmap")
 PAGED_EXTS = {"pdf"}
 
 DIAGRAM_FOLDERS = {
@@ -284,7 +290,12 @@ def is_diagram(f, folder_name=""):
     if is_diagram_folder(folder_low):
         return True
 
+    # A Drive-hosted image often carries no extension in its title (real
+    # card-205 file: `Database Schema as of 19 August 2026`, mime image/png),
+    # so fall back to the mime type rather than missing it.
     ext = ext_of(name)
+    if ext not in DIAGRAM_EXTS and mime.startswith("image/"):
+        ext = "png"
     if ext in DIAGRAM_EXTS:
         return has_diagram_keyword(name, strong_only=ext in PAGED_EXTS)
 

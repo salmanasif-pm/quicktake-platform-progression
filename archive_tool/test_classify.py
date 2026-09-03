@@ -533,6 +533,22 @@ class TestFolderSubstringMatching(unittest.TestCase):
     def test_exclusion_beats_diagram_substring(self):
         self.assertFalse(C.is_diagram_folder("Workflow Screenshots"))
 
+    def test_schema_image_is_a_diagram_but_schema_pdf_is_not(self):
+        # Real card-205 files: the PNG is an ER diagram, the PDF would be a spec.
+        action, dest, _r = C.classify_file(png("Database Schema as of 19 August 2026"))
+        self.assertEqual((action, dest), ("copy", "diagrams"))
+        action, dest, _r = C.classify_file(
+            binfile("Database Schema & Entity Relationship Specification.pdf",
+                    mime="application/pdf"))
+        self.assertEqual((action, dest), ("copy", "sources"))
+
+    def test_mindmap_image_is_a_diagram(self):
+        # Real card-41 and card-205 files.
+        for name in ("NotebookLM Mind Map (1).png",
+                     "Mindmap of Tax OverLay Version 1.png"):
+            action, dest, _r = C.classify_file(png(name))
+            self.assertEqual((action, dest), ("copy", "diagrams"), name)
+
     def test_ordinary_folders_are_neither(self):
         for folder in ("BA Draft", "Latest Updates", "PMO", "QA", "Deliverables", ""):
             self.assertFalse(C.is_diagram_folder(folder), folder)

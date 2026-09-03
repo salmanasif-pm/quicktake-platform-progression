@@ -10,31 +10,32 @@ Completes the archive of the Trello board **PL Sales with Ahmed(AE)**
 |---|---|
 | Cards on the board | 368 |
 | Archived before this work | 32 |
-| Archived by the runs in this repo | 32 (232 files copied, 30 diagrams) |
-| **Remaining** | **304** — list 05 (5 of 28 left), list 06 (80), list 07 (219) |
+| Archived by the runs in this repo | 37 (372 files copied, 37 diagrams) |
+| **Remaining** | **299** — list 06 `Closed Lost` (80), list 07 `On Hold` (219) |
 
-List 04 `Done, (Waiting on Decision)` is complete at 19/19. List 05
-`Closed Won` has 23 of 28 done. The 5 still open are 41, 82, 202, 205 and
-206 — `data/list05c_inventory.py`'s `STILL_TO_DISCOVER` records exactly which
-subfolders each still needs walked (7 to 12 apiece).
-`01 - BA Team (Pending)` has 0 cards, so no folder is needed for it.
+**Lists 04 and 05 are complete**: `Done, (Waiting on Decision)` at 19/19 and
+`Closed Won` at 28/28. `01 - BA Team (Pending)` has 0 cards, so no folder is
+needed for it. What remains is `Closed Lost` (80 cards) and `On Hold` (219).
 
-Those 5 are live project folders with PMO / BA / QA / Deliverables /
-Requirements subfolders, so they need the script's one-level recursion rather
-than a single listing.
+The last five `Closed Won` cards were the largest on the board — live project
+folders with PMO / BA / QA / Deliverables / Requirements subtrees, up to 12
+subfolders each. Card 41 alone yielded 45 files and card 205 fifty-five. Each
+batch's inventory file records what was walked and what was deliberately not
+(recording archives, level-2 sprint folders, a personal Google Takeout
+export); see `NOT_WALKED` in `data/list05*_inventory.py`.
 
 ### card.md is deferred by design
 
 `card.md` is the spec's lowest-priority artifact (section 1) and the most
 expensive thing to write through a tool call, since the content has to
-round-trip. All 32 are rendered locally under `data/cardmd/`; run
+round-trip. All 37 are rendered locally under `data/cardmd/`; run
 `upload_cardmd.py` once on a machine with credentials to place them:
 
 ```bash
 python3 upload_cardmd.py          # idempotent, seconds
 ```
 
-Every other part of those 32 cards — folder tree, copied files, diagrams — is
+Every other part of those 37 cards — folder tree, copied files, diagrams — is
 already in Drive.
 
 ## Files
@@ -123,7 +124,7 @@ duplicates it:
    the tool safe to run over the List 04 cards that were archived through a
    different path.
 
-## Two deliberate deviations from the spec
+## Deliberate deviations from the spec
 
 1. **`architecture` and `integration` are not diagram signals on PDFs.** §7
    lists them as diagram keywords for `.pdf` as well as images, but they are
@@ -133,7 +134,14 @@ duplicates it:
    diagram); on paged formats a stronger signal is required (`diagram`,
    `workflow`, `flow`, `wireframe`, `system map`, …) or a diagram-ish containing
    folder. See `WEAK_DIAGRAM_KEYWORDS`.
-2. **Folder names match by substring, not exactly.** §7 lists diagram folders
+2. **Some diagram signals only count on images.** `schema`, `mind map` and
+   `mindmap` join `architecture` and `integration` in `WEAK_DIAGRAM_KEYWORDS`:
+   a PNG called `Database Schema as of 19 August 2026` (real card-205 file) is
+   an ER diagram, but `Database Schema Specification.pdf` is a spec. Diagram
+   detection also falls back to the mime type when a title carries no
+   extension, which Drive-hosted images often don't — that same card-205 PNG
+   would otherwise have been dropped entirely.
+3. **Folder names match by substring, not exactly.** §7 lists diagram folders
    by exact name. Real folders are `Architecture and data flux` (holds
    `BlockRock Architecture.pdf`), `User Flow Diagrams` and
    `System Workflow Diagrams`; exact matching missed all three. Exclusions
@@ -141,19 +149,19 @@ duplicates it:
    `Prospect's System Screenshots` is still excluded despite containing
    "System". Folders are named far more deliberately than files, which is why
    substring matching is safe here but not on filenames.
-3. **Slides are diagrams only when the name says "diagram".** §7 allows "slides
+4. **Slides are diagrams only when the name says "diagram".** §7 allows "slides
    that are clearly a diagram deliverable", and the workflow/flow keyword family
    would have swept in the real decks `MoneyMate | WorkFlow & Kickoff Document`
    and `247CAD - WorkFlow & Kickoff Document`, which are kickoff documents. For
    Slides the name now has to contain "diagram" (or the containing folder has to
    be diagram-ish).
-4. **Files are classified before duplicates are suppressed.** §7 presents dedup
+5. **Files are classified before duplicates are suppressed.** §7 presents dedup
    first. Running it first makes a skipped video get reported as "duplicate of
    the copy of itself" instead of as a video, which distorts the §10 category
    totals. Dedup now applies only to the copy-worthy set; the net set of copied
    files is the same.
 
-Both are covered by tests.
+Every one of these is covered by tests in `test_classify.py`.
 
 ## Things found that the spec got wrong
 
