@@ -512,3 +512,32 @@ class TestQueueSelection(unittest.TestCase):
     def test_empty_pending_list_contributes_nothing(self):
         self.assertEqual(
             [c for c in self.cards if c["list_name"] == "BA Team (Pending)"], [])
+
+
+class TestFolderSubstringMatching(unittest.TestCase):
+    def test_architecture_folder_promotes_pdf_to_diagram(self):
+        # Real card-427 folder: "Architecture and data flux".
+        action, dest, _ = C.classify_file(
+            binfile("BlockRock Architecture.pdf", mime="application/pdf"),
+            folder_name="Architecture and data flux")
+        self.assertEqual((action, dest), ("copy", "diagrams"))
+
+    def test_diagram_named_folders_match_by_substring(self):
+        for folder in ("User Flow Diagrams", "System Workflow Diagrams",
+                       "Final Diagrams", "Architecture and data flux"):
+            self.assertTrue(C.is_diagram_folder(folder), folder)
+
+    def test_screenshot_folder_excluded_by_substring(self):
+        # Real card-424 folder: contains "System" but is raw imagery.
+        self.assertTrue(C.is_excluded_folder("Prospect's System Screenshots"))
+        action, _d, _r = C.classify_file(png("Workflow Diagram.png"),
+                                         folder_name="Prospect's System Screenshots")
+        self.assertEqual(action, "skip")
+
+    def test_exclusion_beats_diagram_substring(self):
+        self.assertFalse(C.is_diagram_folder("Workflow Screenshots"))
+
+    def test_ordinary_folders_are_neither(self):
+        for folder in ("BA Draft", "Latest Updates", "PMO", "QA", "Deliverables", ""):
+            self.assertFalse(C.is_diagram_folder(folder), folder)
+            self.assertFalse(C.is_excluded_folder(folder), folder)

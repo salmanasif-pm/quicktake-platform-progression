@@ -64,12 +64,25 @@ DIAGRAM_FOLDERS = {
     "architecture", "system maps", "system map", "final diagrams",
 }
 
+# Substrings that make a *folder* a diagram folder. Folders are named far more
+# deliberately than files, so matching inside the name is safe here where it
+# would be too loose on a filename: real folders `Architecture and data flux`,
+# `User Flow Diagrams` and `System Workflow Diagrams` all hold diagrams.
+DIAGRAM_FOLDER_SUBSTRINGS = (
+    "diagram", "workflow", "work flow", "architecture", "system map",
+    "user flow", "userflow", "data flow", "dataflow", "wireframe",
+)
+
 # Folders whose contents are raw reference imagery, never final diagrams.
 EXCLUDED_IMAGE_FOLDERS = {
     "screenshots", "screen shots", "application screenshots", "app screenshots",
     "app's screenshorts", "apps screenshorts", "app screenshorts",
     "raw", "game images", "images", "reference images", "photos",
 }
+
+# Substrings that exclude a folder outright, checked before the diagram ones:
+# `Prospect's System Screenshots` is raw imagery despite containing "system".
+EXCLUDED_FOLDER_SUBSTRINGS = ("screenshot", "screen shot", "screenshort")
 
 # Filenames that are screenshots / camera dumps rather than deliverables.
 EXCLUDED_NAME_PATTERNS = (
@@ -212,9 +225,29 @@ def _matches(patterns, text):
     return any(p.search(text or "") for p in patterns)
 
 
+def is_excluded_folder(folder_name):
+    """True for folders holding raw imagery rather than deliverables."""
+    low = (folder_name or "").strip().lower()
+    if not low:
+        return False
+    if low in EXCLUDED_IMAGE_FOLDERS:
+        return True
+    return any(sub in low for sub in EXCLUDED_FOLDER_SUBSTRINGS)
+
+
+def is_diagram_folder(folder_name):
+    """True for folders whose contents are diagram deliverables."""
+    low = (folder_name or "").strip().lower()
+    if not low or is_excluded_folder(low):
+        return False
+    if low in DIAGRAM_FOLDERS:
+        return True
+    return any(sub in low for sub in DIAGRAM_FOLDER_SUBSTRINGS)
+
+
 def is_excluded_image(name, folder_name=""):
     """True when an image is raw screenshot/reference material, not a deliverable."""
-    if (folder_name or "").strip().lower() in EXCLUDED_IMAGE_FOLDERS:
+    if is_excluded_folder(folder_name):
         return True
     return _matches(EXCLUDED_NAME_PATTERNS, base_name(name))
 
@@ -248,7 +281,7 @@ def is_diagram(f, folder_name=""):
         return True
 
     # Everything inside a diagram-ish folder is a diagram.
-    if folder_low in DIAGRAM_FOLDERS:
+    if is_diagram_folder(folder_low):
         return True
 
     ext = ext_of(name)

@@ -10,18 +10,32 @@ Completes the archive of the Trello board **PL Sales with Ahmed(AE)**
 |---|---|
 | Cards on the board | 368 |
 | Archived before this work | 32 |
-| Archived by the runs in this repo | 18 (94 files copied, 2 diagrams) |
-| **Remaining** | **318** — list 05 (19 of 28 left), list 06 (80), list 07 (219) |
+| Archived by the runs in this repo | 28 (147 files copied, 9 diagrams) |
+| **Remaining** | **309** — list 05 (9 of 28 left), list 06 (80), list 07 (219) |
 
 List 04 `Done, (Waiting on Decision)` is complete at 19/19. List 05
-`Closed Won` has 9 of 28 done (cards 17, 24, 49, 104, 122, 168, 203, 204, 422).
+`Closed Won` has 19 of 28 done. The 9 still open are 41, 82, 109, 202, 205,
+206, 424, 431 and 433 — `data/list05c_inventory.py`'s `STILL_TO_DISCOVER`
+records exactly which subfolders each still needs walked.
 `01 - BA Team (Pending)` has 0 cards, so no folder is needed for it.
 
-The 19 List 05 cards still open are live project folders with PMO / BA / QA /
-Deliverables / Requirements subfolders — up to 12 subfolders each;
-`data/list05_inventory.py` records which ones need the script's one-level
-recursion, and how many subfolders each has, so that work does not have to be
-rediscovered.
+Those 9 are live project folders with PMO / BA / QA / Deliverables /
+Requirements subfolders — up to 12 each — so they need the script's one-level
+recursion rather than a single listing.
+
+### card.md is deferred by design
+
+`card.md` is the spec's lowest-priority artifact (section 1) and the most
+expensive thing to write through a tool call, since the content has to
+round-trip. All 28 are rendered locally under `data/cardmd/`; run
+`upload_cardmd.py` once on a machine with credentials to place them:
+
+```bash
+python3 upload_cardmd.py          # idempotent, seconds
+```
+
+Every other part of those 28 cards — folder tree, copied files, diagrams — is
+already in Drive.
 
 ## Files
 
@@ -29,8 +43,9 @@ rediscovered.
 |---|---|
 | `archive_trello_to_drive.py` | the resumable archiver: discovery, copying, manifest, report |
 | `classify.py` | pure decision rules (spec §7) — no I/O, fully unit-tested |
-| `test_classify.py` | 65 tests, no credentials or network needed |
+| `test_classify.py` | 71 tests, no credentials or network needed |
 | `plan_from_inventory.py` | runs the classifier over a recorded inventory and prints the plan, without touching Drive |
+| `upload_cardmd.py` | uploads the pre-rendered `data/cardmd/*.md` into the archived cards; idempotent |
 | `data/trello_snapshot.json` | all 368 cards, pulled read-only |
 | `data/archive-manifest.csv` | manifest for the List 04 run + the 32 prior cards |
 | `data/errors.csv` | inaccessible sources |
@@ -66,7 +81,7 @@ python3 archive_trello_to_drive.py --snapshot data/trello_snapshot.json \
 python3 archive_trello_to_drive.py --snapshot data/trello_snapshot.json \
     --work-dir data --cards 295,452 --limit 2
 
-python3 -m unittest test_classify        # 65 tests
+python3 -m unittest test_classify        # 71 tests
 ```
 
 `--snapshot` replays the committed board pull and needs no Trello access at
@@ -114,13 +129,21 @@ duplicates it:
    diagram); on paged formats a stronger signal is required (`diagram`,
    `workflow`, `flow`, `wireframe`, `system map`, …) or a diagram-ish containing
    folder. See `WEAK_DIAGRAM_KEYWORDS`.
-2. **Slides are diagrams only when the name says "diagram".** §7 allows "slides
+2. **Folder names match by substring, not exactly.** §7 lists diagram folders
+   by exact name. Real folders are `Architecture and data flux` (holds
+   `BlockRock Architecture.pdf`), `User Flow Diagrams` and
+   `System Workflow Diagrams`; exact matching missed all three. Exclusions
+   match by substring too and are checked first, so
+   `Prospect's System Screenshots` is still excluded despite containing
+   "System". Folders are named far more deliberately than files, which is why
+   substring matching is safe here but not on filenames.
+3. **Slides are diagrams only when the name says "diagram".** §7 allows "slides
    that are clearly a diagram deliverable", and the workflow/flow keyword family
    would have swept in the real decks `MoneyMate | WorkFlow & Kickoff Document`
    and `247CAD - WorkFlow & Kickoff Document`, which are kickoff documents. For
    Slides the name now has to contain "diagram" (or the containing folder has to
    be diagram-ish).
-3. **Files are classified before duplicates are suppressed.** §7 presents dedup
+4. **Files are classified before duplicates are suppressed.** §7 presents dedup
    first. Running it first makes a skipped video get reported as "duplicate of
    the copy of itself" instead of as a video, which distorts the §10 category
    totals. Dedup now applies only to the copy-worthy set; the net set of copied
@@ -157,7 +180,7 @@ folder id and records a per-folder error on failure.
 ## Known limitations
 
 - The Trello MCP snapshot carries no card **attachments** (the REST API does).
-  Discovery for the 327 remaining cards therefore relies on Drive links in card
+  Discovery for the remaining cards therefore relies on Drive links in card
   descriptions, which is where they are in practice. Run without `--snapshot`,
   with `TRELLO_KEY`/`TRELLO_TOKEN`, to pick up attachments too.
 - Discovery recurses exactly one level into subfolders, as the spec specifies.
