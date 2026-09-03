@@ -413,10 +413,6 @@ class TestCardMarkdown(unittest.TestCase):
         self.assertIn("(50.00 MB)", md)
 
 
-if __name__ == "__main__":
-    unittest.main(verbosity=2)
-
-
 class TestPrimarySelection(unittest.TestCase):
     def test_fewest_copy_markers_wins_over_newest(self):
         # Real card-295 shape: Drive stamps the newest time on the copy.
@@ -541,3 +537,7 @@ class TestFolderSubstringMatching(unittest.TestCase):
         for folder in ("BA Draft", "Latest Updates", "PMO", "QA", "Deliverables", ""):
             self.assertFalse(C.is_diagram_folder(folder), folder)
             self.assertFalse(C.is_excluded_folder(folder), folder)
+
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)

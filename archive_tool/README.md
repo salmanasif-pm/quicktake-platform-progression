@@ -10,31 +10,31 @@ Completes the archive of the Trello board **PL Sales with Ahmed(AE)**
 |---|---|
 | Cards on the board | 368 |
 | Archived before this work | 32 |
-| Archived by the runs in this repo | 28 (147 files copied, 9 diagrams) |
-| **Remaining** | **309** — list 05 (9 of 28 left), list 06 (80), list 07 (219) |
+| Archived by the runs in this repo | 32 (232 files copied, 30 diagrams) |
+| **Remaining** | **304** — list 05 (5 of 28 left), list 06 (80), list 07 (219) |
 
 List 04 `Done, (Waiting on Decision)` is complete at 19/19. List 05
-`Closed Won` has 19 of 28 done. The 9 still open are 41, 82, 109, 202, 205,
-206, 424, 431 and 433 — `data/list05c_inventory.py`'s `STILL_TO_DISCOVER`
-records exactly which subfolders each still needs walked.
+`Closed Won` has 23 of 28 done. The 5 still open are 41, 82, 202, 205 and
+206 — `data/list05c_inventory.py`'s `STILL_TO_DISCOVER` records exactly which
+subfolders each still needs walked (7 to 12 apiece).
 `01 - BA Team (Pending)` has 0 cards, so no folder is needed for it.
 
-Those 9 are live project folders with PMO / BA / QA / Deliverables /
-Requirements subfolders — up to 12 each — so they need the script's one-level
-recursion rather than a single listing.
+Those 5 are live project folders with PMO / BA / QA / Deliverables /
+Requirements subfolders, so they need the script's one-level recursion rather
+than a single listing.
 
 ### card.md is deferred by design
 
 `card.md` is the spec's lowest-priority artifact (section 1) and the most
 expensive thing to write through a tool call, since the content has to
-round-trip. All 28 are rendered locally under `data/cardmd/`; run
+round-trip. All 32 are rendered locally under `data/cardmd/`; run
 `upload_cardmd.py` once on a machine with credentials to place them:
 
 ```bash
 python3 upload_cardmd.py          # idempotent, seconds
 ```
 
-Every other part of those 28 cards — folder tree, copied files, diagrams — is
+Every other part of those 32 cards — folder tree, copied files, diagrams — is
 already in Drive.
 
 ## Files
@@ -47,10 +47,14 @@ already in Drive.
 | `plan_from_inventory.py` | runs the classifier over a recorded inventory and prints the plan, without touching Drive |
 | `upload_cardmd.py` | uploads the pre-rendered `data/cardmd/*.md` into the archived cards; idempotent |
 | `data/trello_snapshot.json` | all 368 cards, pulled read-only |
-| `data/archive-manifest.csv` | manifest for the List 04 run + the 32 prior cards |
+| `emit_batch.py` | replays a completed connector batch into manifest rows and `card.md` files |
+| `data/archive-manifest.csv` | manifest for every card archived here + the 32 prior cards |
 | `data/errors.csv` | inaccessible sources |
-| `data/list04_*` | the recorded inventory, plan, destination folder ids and copy results for the completed run |
-| `data/cardmd/*.md` | the `card.md` written for each List 04 card |
+| `data/list0*_inventory.py` | the recorded Drive inventory per batch, with scope notes on what was and was not walked |
+| `data/list0*_dest_folders.json` | destination folder ids per card |
+| `data/list0*_copy_ids.json` | copied title -> landed file id, per destination folder |
+| `data/list0*_copy_results.json` | source file id -> copied file id |
+| `data/cardmd/*.md` | the `card.md` rendered for each archived card |
 
 ## Running it
 
@@ -184,8 +188,14 @@ folder id and records a per-folder error on failure.
   descriptions, which is where they are in practice. Run without `--snapshot`,
   with `TRELLO_KEY`/`TRELLO_TOKEN`, to pick up attachments too.
 - Discovery recurses exactly one level into subfolders, as the spec specifies.
-  Deliverables nested two levels down are not found.
-- `archive-manifest.csv` for the List 04 run lives here in the repo; the control
-  folder in Drive has `errors.csv` and
-  `run-report-2026-09-03-list04.md`. The script uploads the full CSV to the
-  control folder on its next run.
+  Deliverables nested two levels down are not found. Two cards needed a
+  judgement call against that rule, both recorded in
+  `data/list05d_inventory.py`: card 424's diagram sets sit at level 2
+  (`Latest Deliverables/User Flow Diagrams` and `.../System Workflow
+  Diagrams`) and were walked anyway, since separating final diagrams is the
+  spec's second priority — 11 PDFs; card 431's `DSU Meetings` holds 90+ dated
+  subfolders of meeting recordings, all of which the spec skips, so they were
+  deliberately left unwalked.
+- `archive-manifest.csv` lives here in the repo; the control folder in Drive
+  has `errors.csv` and `run-report-2026-09-03-list04.md`. The script uploads
+  the full CSV to the control folder on its next run.
