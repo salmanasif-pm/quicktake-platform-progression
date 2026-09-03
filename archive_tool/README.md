@@ -10,13 +10,15 @@ Completes the archive of the Trello board **PL Sales with Ahmed(AE)**
 |---|---|
 | Cards on the board | 368 |
 | Archived before this work | 32 |
-| Archived by the runs in this repo | 117 (572 files copied, 58 diagrams) |
-| **Remaining** | **219** — list 07 `On Hold` |
+| Archived by the runs in this repo | 121 (588 files copied, 60 diagrams) |
+| **Remaining** | **215** — list 07 `On Hold` (4 of 219 done) |
 
 **Lists 04, 05 and 06 are complete**: `Done, (Waiting on Decision)` at
 19/19, `Closed Won` at 28/28 and `Closed Lost` at 80/80. `01 - BA Team
 (Pending)` has 0 cards, so no folder is needed for it. Only `On Hold` (219
-cards) remains.
+cards) remains, and it is under way: `data/list07_links.json` holds the
+per-card Drive folder ids for all 219, so each batch can pick up where the
+last stopped without re-reading the board.
 
 The two lists have opposite shapes. `Closed Won` cards are live project
 folders with PMO / BA / QA / Deliverables / Requirements subtrees, up to
@@ -36,14 +38,14 @@ export; see `NOT_WALKED` and `SUBFOLDERS_TO_WALK` in
 
 `card.md` is the spec's lowest-priority artifact (section 1) and the most
 expensive thing to write through a tool call, since the content has to
-round-trip. All 117 are rendered locally under `data/cardmd/`; run
+round-trip. All 121 are rendered locally under `data/cardmd/`; run
 `upload_cardmd.py` once on a machine with credentials to place them:
 
 ```bash
 python3 upload_cardmd.py          # idempotent, seconds
 ```
 
-Every other part of those 117 cards — folder tree, copied files, diagrams —
+Every other part of those 121 cards — folder tree, copied files, diagrams —
 is already in Drive.
 
 ## Files
