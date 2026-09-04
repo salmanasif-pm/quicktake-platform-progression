@@ -10,15 +10,24 @@ Completes the archive of the Trello board **PL Sales with Ahmed(AE)**
 |---|---|
 | Cards on the board | 368 |
 | Archived before this work | 32 |
-| Archived by the runs in this repo | 319 (1126 files copied, 131 diagrams) |
-| **Remaining** | **17** — list 07 `On Hold` (202 of 219 done) |
+| Archived by the runs in this repo | 336 (1173 files copied, 137 diagrams) |
+| **Remaining** | **0 — the board is fully archived** |
 
-**Lists 04, 05 and 06 are complete**: `Done, (Waiting on Decision)` at
-19/19, `Closed Won` at 28/28 and `Closed Lost` at 80/80. `01 - BA Team
-(Pending)` has 0 cards, so no folder is needed for it. Only `On Hold` (219
-cards) remains, and it is under way: `data/list07_links.json` holds the
-per-card Drive folder ids for all 219, so each batch can pick up where the
-last stopped without re-reading the board.
+**Every list is complete.** `Done, (Waiting on Decision)` 19/19, `Closed
+Won` 28/28, `Closed Lost` 80/80, `On Hold` 219/219, plus the 22 cards in
+the smaller lists (`Unresponsive`, `Solution Architect | AE (Final
+Review)`, `HOE | Ahmed's Review`, `BA Team (In Progress)`, `Internal Cards
+- Done`) that the earlier runs covered. `01 - BA Team (Pending)` has 0
+cards, so no folder was needed for it. `data/archive-manifest.csv` carries
+one `card_complete` row per card — 368 of them — and
+`data/list07_links.json` records the per-card Drive folder ids for the 219
+`On Hold` cards that the eleven `list07*` batches worked through.
+
+The one thing still outstanding is cosmetic: the 336 rendered `card.md`
+files live in `data/cardmd/` and have not been uploaded into their Drive
+card folders. See **card.md is deferred by design** below; one run of
+`python3 upload_cardmd.py` on a machine with Drive credentials finishes
+it.
 
 The two lists have opposite shapes. `Closed Won` cards are live project
 folders with PMO / BA / QA / Deliverables / Requirements subtrees, up to
