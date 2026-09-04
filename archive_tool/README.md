@@ -10,8 +10,8 @@ Completes the archive of the Trello board **PL Sales with Ahmed(AE)**
 |---|---|
 | Cards on the board | 368 |
 | Archived before this work | 32 |
-| Archived by the runs in this repo | 295 (1078 files copied, 131 diagrams) |
-| **Remaining** | **41** — list 07 `On Hold` (178 of 219 done) |
+| Archived by the runs in this repo | 319 (1126 files copied, 131 diagrams) |
+| **Remaining** | **17** — list 07 `On Hold` (202 of 219 done) |
 
 **Lists 04, 05 and 06 are complete**: `Done, (Waiting on Decision)` at
 19/19, `Closed Won` at 28/28 and `Closed Lost` at 80/80. `01 - BA Team
@@ -230,8 +230,10 @@ An empty or short folder listing is therefore not proof of a folder's contents.
   a `HELD_BACK` table in their batch's inventory and left in place: card 272's
   `Creds/ICC Credentials/Logins` sheet (`data/list07h_inventory.py`) and card
   281's `lipsync-new-dev (1).pem` private key (`data/list07i_inventory.py`).
-  Neither is a sales deliverable. Say the word and either gets copied like
-  anything else.
+  Neither is a sales deliverable. Card 301's `DB Credentials` subfolder was
+  left unwalked for the same reason (`data/list07j_inventory.py`'s
+  `NOT_WALKED`). Say the word and any of them gets copied like anything
+  else.
 - `archive-manifest.csv` lives here in the repo; the control folder in Drive
   has `errors.csv` and `run-report-2026-09-03-list04.md`. The script uploads
   the full CSV to the control folder on its next run.
