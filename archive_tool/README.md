@@ -10,8 +10,8 @@ Completes the archive of the Trello board **PL Sales with Ahmed(AE)**
 |---|---|
 | Cards on the board | 368 |
 | Archived before this work | 32 |
-| Archived by the runs in this repo | 223 (823 files copied, 110 diagrams) |
-| **Remaining** | **113** — list 07 `On Hold` (106 of 219 done) |
+| Archived by the runs in this repo | 247 (906 files copied, 116 diagrams) |
+| **Remaining** | **89** — list 07 `On Hold` (130 of 219 done) |
 
 **Lists 04, 05 and 06 are complete**: `Done, (Waiting on Decision)` at
 19/19, `Closed Won` at 28/28 and `Closed Lost` at 80/80. `01 - BA Team
@@ -198,6 +198,18 @@ of the parents that *were* readable. This was hit twice (cards 458 and 104, both
 of whose folders are gone). Folders must therefore be listed one parent per
 query, which is what the script does — `Drive.list_children` takes a single
 folder id and records a per-folder error on failure.
+
+A second, quieter failure mode showed up in batch 07g: **a folder listing can
+under-report.** Card 235's folder lists two mp4s whether it is queried alone or
+grouped with others, yet `get_file_metadata` on the file links in the card's own
+description reports two Google Docs — `Meeting Notes - Geniune AI` and
+`ChefLou's Army | AI Chatbot Development - Roadmap & Estimate` — whose parent
+*is* that folder. Card 245's `Engineering` folder lists nothing at all, yet its
+roadmap sheet reports that folder as its parent. Both are files owned by another
+user; a listing appears to omit what the caller cannot see as a child even when
+the file itself is readable. Unioning each card's own file links with the folder
+listings — which `discover_card_sources` already does — is what recovers them.
+An empty or short folder listing is therefore not proof of a folder's contents.
 
 ## Known limitations
 
