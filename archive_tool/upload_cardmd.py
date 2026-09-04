@@ -37,7 +37,7 @@ DATA = os.path.join(HERE, "data")
 DEST_MAPS = ["list04_dest_folders.json", "list05_dest_folders.json",
              "list05c_dest_folders.json", "list05d_dest_folders.json",
              "list05e_dest_folders.json", "list06a_dest_folders.json",
-             "list06b_dest_folders.json", "list06c_dest_folders.json", "list06d_dest_folders.json", "list06e_dest_folders.json", "list07a_dest_folders.json", "list07b_dest_folders.json", "list07c_dest_folders.json", "list07d_dest_folders.json"]
+             "list06b_dest_folders.json", "list06c_dest_folders.json", "list06d_dest_folders.json", "list06e_dest_folders.json", "list07a_dest_folders.json", "list07b_dest_folders.json", "list07c_dest_folders.json", "list07d_dest_folders.json", "list07e_dest_folders.json"]
 
 
 def load_dest_map():
