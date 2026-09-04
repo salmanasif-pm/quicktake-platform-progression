@@ -10,8 +10,8 @@ Completes the archive of the Trello board **PL Sales with Ahmed(AE)**
 |---|---|
 | Cards on the board | 368 |
 | Archived before this work | 32 |
-| Archived by the runs in this repo | 201 (758 files copied, 95 diagrams) |
-| **Remaining** | **135** — list 07 `On Hold` (84 of 219 done) |
+| Archived by the runs in this repo | 223 (823 files copied, 110 diagrams) |
+| **Remaining** | **113** — list 07 `On Hold` (106 of 219 done) |
 
 **Lists 04, 05 and 06 are complete**: `Done, (Waiting on Decision)` at
 19/19, `Closed Won` at 28/28 and `Closed Lost` at 80/80. `01 - BA Team
@@ -38,14 +38,14 @@ export; see `NOT_WALKED` and `SUBFOLDERS_TO_WALK` in
 
 `card.md` is the spec's lowest-priority artifact (section 1) and the most
 expensive thing to write through a tool call, since the content has to
-round-trip. All 201 are rendered locally under `data/cardmd/`; run
+round-trip. All 223 are rendered locally under `data/cardmd/`; run
 `upload_cardmd.py` once on a machine with credentials to place them:
 
 ```bash
 python3 upload_cardmd.py          # idempotent, seconds
 ```
 
-Every other part of those 201 cards — folder tree, copied files, diagrams —
+Every other part of those 223 cards — folder tree, copied files, diagrams —
 is already in Drive.
 
 ## Files
