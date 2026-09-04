@@ -10,8 +10,8 @@ Completes the archive of the Trello board **PL Sales with Ahmed(AE)**
 |---|---|
 | Cards on the board | 368 |
 | Archived before this work | 32 |
-| Archived by the runs in this repo | 271 (1023 files copied, 131 diagrams) |
-| **Remaining** | **65** — list 07 `On Hold` (154 of 219 done) |
+| Archived by the runs in this repo | 295 (1078 files copied, 131 diagrams) |
+| **Remaining** | **41** — list 07 `On Hold` (178 of 219 done) |
 
 **Lists 04, 05 and 06 are complete**: `Done, (Waiting on Decision)` at
 19/19, `Closed Won` at 28/28 and `Closed Lost` at 80/80. `01 - BA Team
@@ -226,11 +226,12 @@ An empty or short folder listing is therefore not proof of a folder's contents.
   spec's second priority — 11 PDFs; card 431's `DSU Meetings` holds 90+ dated
   subfolders of meeting recordings, all of which the spec skips, so they were
   deliberately left unwalked.
-- One file discovery found is deliberately **not** copied: card 272's
-  `Creds/ICC Credentials/Logins` sheet. It is a live credentials store rather
-  than a sales deliverable, so it is recorded in
-  `data/list07h_inventory.py`'s `HELD_BACK` table and left in place. Say the
-  word and it gets copied like anything else.
+- Two files discovery found are deliberately **not** copied, both recorded in
+  a `HELD_BACK` table in their batch's inventory and left in place: card 272's
+  `Creds/ICC Credentials/Logins` sheet (`data/list07h_inventory.py`) and card
+  281's `lipsync-new-dev (1).pem` private key (`data/list07i_inventory.py`).
+  Neither is a sales deliverable. Say the word and either gets copied like
+  anything else.
 - `archive-manifest.csv` lives here in the repo; the control folder in Drive
   has `errors.csv` and `run-report-2026-09-03-list04.md`. The script uploads
   the full CSV to the control folder on its next run.
