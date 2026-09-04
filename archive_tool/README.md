@@ -23,11 +23,10 @@ one `card_complete` row per card — 368 of them — and
 `data/list07_links.json` records the per-card Drive folder ids for the 219
 `On Hold` cards that the eleven `list07*` batches worked through.
 
-The one thing still outstanding is cosmetic: the 336 rendered `card.md`
-files live in `data/cardmd/` and have not been uploaded into their Drive
-card folders. See **card.md is deferred by design** below; one run of
-`python3 upload_cardmd.py` on a machine with Drive credentials finishes
-it.
+Nothing is outstanding. The 336 rendered `card.md` files in `data/cardmd/`
+have all been uploaded into their card folders on Drive, each into a
+`01 - Trello Record` subfolder, and each verified byte-for-byte against
+the local file. See **card.md** below.
 
 The two lists have opposite shapes. `Closed Won` cards are live project
 folders with PMO / BA / QA / Deliverables / Requirements subtrees, up to
@@ -43,19 +42,24 @@ not — recording archives, level-2 sprint folders, a personal Google Takeout
 export; see `NOT_WALKED` and `SUBFOLDERS_TO_WALK` in
 `data/list0*_inventory.py`.
 
-### card.md is deferred by design
+### card.md
 
 `card.md` is the spec's lowest-priority artifact (section 1) and the most
 expensive thing to write through a tool call, since the content has to
-round-trip. All 223 are rendered locally under `data/cardmd/`; run
-`upload_cardmd.py` once on a machine with credentials to place them:
+round-trip verbatim. All 336 are rendered locally under `data/cardmd/` and
+all 336 are now on Drive at `<card folder>/01 - Trello Record/card.md`.
 
-```bash
-python3 upload_cardmd.py          # idempotent, seconds
-```
+The upload was done through the Drive MCP connector, one card at a time,
+comparing the `fileSize` Drive returns against `stat -c%s` on the local
+file; every card matched exactly. Files containing U+00A0 (non-breaking
+space) cannot survive a `textContent` write — the connector normalises it
+to a plain space and the file lands one byte short per occurrence — so
+those were sent as `base64Content` instead. `data/cardmd_done.txt` lists
+the cards uploaded and `data/cardmd_uploads.json` maps each card to the
+`01 - Trello Record` folder created for it, so the pass is resumable.
 
-Every other part of those 223 cards — folder tree, copied files, diagrams —
-is already in Drive.
+`upload_cardmd.py` remains the one-command path for a machine that has
+OAuth credentials; it is idempotent, so running it now is a no-op.
 
 ## Files
 
